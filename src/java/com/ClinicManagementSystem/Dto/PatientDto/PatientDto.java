@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.ClinicManagmentSystem.Dto.PatientDto;
+package com.ClinicManagementSystem.Dto.PatientDto;
 
 /**
  *
@@ -11,11 +11,11 @@ package com.ClinicManagmentSystem.Dto.PatientDto;
  */
 public class PatientDto {
 
+    private int id;
     private String email;
     private String password;
     private String firstName;
     private String lastName;
-
 
     public String getEmail() {
         return email;
@@ -47,6 +47,14 @@ public class PatientDto {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
 }

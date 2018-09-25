@@ -6,6 +6,7 @@
 package com.ClinicManagementSystem.Service.DoctorService;
 
 import com.ClinicManagementSystem.Dto.DoctorDto.DoctorDto;
+import java.util.List;
 
 /**
  *
@@ -13,4 +14,5 @@ import com.ClinicManagementSystem.Dto.DoctorDto.DoctorDto;
  */
 public interface DoctorService {
     public void saveDoctorInfo(DoctorDto doctorDto);
+    public List<DoctorDto> getDoctorInfo();
 }

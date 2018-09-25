@@ -13,4 +13,6 @@ public class QueryUtil {
 
     public static final String CREATE_PATIENT = "insert into patient_info(email,password,firstname,lastname)values(?,?,?,?)";
     public static final String CREATE_DOCTOR = "insert into doctor_info(email,password,firstname,lastname,specialization)values(?,?,?,?,?)";
+    public static final String SELECT_PATIENT = "select * from patient_info";
+    public static final String SELECT_DOCTOR = "select * from doctor_info";
 }

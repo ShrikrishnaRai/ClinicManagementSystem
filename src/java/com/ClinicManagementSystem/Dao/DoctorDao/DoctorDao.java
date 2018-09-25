@@ -6,11 +6,15 @@
 package com.ClinicManagementSystem.Dao.DoctorDao;
 
 import com.ClinicManagementSystem.Dto.DoctorDto.DoctorDto;
+import java.util.List;
 
 /**
  *
  * @author cri_r
  */
 public interface DoctorDao {
+
     public void saveDoctorInfo(DoctorDto doctorDto);
+
+    public List selectDoctor();
 }

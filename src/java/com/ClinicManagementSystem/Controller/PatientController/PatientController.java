@@ -1,4 +1,4 @@
-/*
+    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -7,7 +7,7 @@ package com.ClinicManagementSystem.Controller.PatientController;
 
 import com.ClinicManagementSystem.Service.PatientService.PatientService;
 import com.ClinicManagementSystem.Service.PatientService.PatientServiceIMPL;
-import com.ClinicManagmentSystem.Dto.PatientDto.PatientDto;
+import com.ClinicManagementSystem.Dto.PatientDto.PatientDto;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -24,7 +24,7 @@ import javax.swing.JOptionPane;
 @WebServlet("/PatientController")
 public class PatientController extends HttpServlet {
 
-    private static final String TEST_PAGE = "test.jsp";
+    private static final String PATIENT_PAGE = "patientInfo.jsp";
 
     private static final long serialVersionUID = 1L;
     PatientService patientService_Ic = new PatientServiceIMPL();
@@ -37,7 +37,8 @@ public class PatientController extends HttpServlet {
         patientDto_Ic.setEmail(req.getParameter("email"));
         patientDto_Ic.setPassword(req.getParameter("password"));
         patientService_Ic.savePatientInfo(patientDto_Ic);
-        RequestDispatcher rd = req.getRequestDispatcher(TEST_PAGE);
+        RequestDispatcher rd = req.getRequestDispatcher(PATIENT_PAGE);
+        req.setAttribute("patient", patientService_Ic.getPatientInfo());
         rd.forward(req, resp);
     }
 

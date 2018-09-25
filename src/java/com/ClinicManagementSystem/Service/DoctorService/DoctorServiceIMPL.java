@@ -8,6 +8,7 @@ package com.ClinicManagementSystem.Service.DoctorService;
 import com.ClinicManagementSystem.Dao.DoctorDao.DoctorDao;
 import com.ClinicManagementSystem.Dao.DoctorDao.DoctorDaoIMPL;
 import com.ClinicManagementSystem.Dto.DoctorDto.DoctorDto;
+import java.util.List;
 
 /**
  *
@@ -22,6 +23,11 @@ public class DoctorServiceIMPL implements DoctorService{
 
     public void saveDoctorInfo(DoctorDto doctorDto) {
         doctorDao_Ic.saveDoctorInfo(doctorDto);
+    }
+
+    @Override
+    public List<DoctorDto> getDoctorInfo() {
+        return doctorDao_Ic.selectDoctor();
     }
     
 }

@@ -5,12 +5,16 @@
  */
 package com.ClinicManagementSystem.Service.PatientService;
 
-import com.ClinicManagmentSystem.Dto.PatientDto.PatientDto;
+import com.ClinicManagementSystem.Dto.PatientDto.PatientDto;
+import java.util.List;
 
 /**
  *
  * @author cri_r
  */
 public interface PatientService {
+
     public void savePatientInfo(PatientDto patientDto_Ic);
+
+    public List<PatientDto> getPatientInfo();
 }
