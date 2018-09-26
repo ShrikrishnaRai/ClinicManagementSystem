@@ -62,4 +62,25 @@ public class PatientDaoIMPL implements PatientDao {
         return patientDtoList;
     }
 
+    @Override
+    public boolean loginPatient(String username, String password) {
+        try {
+            ps=DbUtil.getConnection().prepareStatement(QueryUtil.LOGIN_PATIENT);
+            ps.setString(1, username);
+            ps.setString(2, password);
+            ResultSet rs_Dco=ps.executeQuery();
+            if(rs_Dco.next()){
+                return true;
+            }
+            else{
+                return false;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(PatientDaoIMPL.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(PatientDaoIMPL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
+
 }

@@ -3,10 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/cri_r/Documents/ClinicManagementSystem/web/test.jsp</file>
-            <file>file:/C:/Users/cri_r/Documents/ClinicManagementSystem/web/Signup.jsp</file>
-            <file>file:/C:/Users/cri_r/Documents/ClinicManagementSystem/web/index.jsp</file>
-            <file>file:/C:/Users/cri_r/Documents/ClinicManagementSystem/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/cri_r/Documents/ClinicManagementSystem/web/doctorInfo.jsp</file>
+            <file>file:/C:/Users/cri_r/Documents/ClinicManagementSystem/src/java/com/ClinicManagementSystem/Controller/PatientController/PatientController.java</file>
+            <file>file:/C:/Users/cri_r/Documents/ClinicManagementSystem/src/java/com/ClinicManagementSystem/Dto/DoctorDto/DoctorDto.java</file>
+            <file>file:/C:/Users/cri_r/Documents/ClinicManagementSystem/src/java/com/ClinicManagementSystem/Dao/DoctorDao/DoctorDaoIMPL.java</file>
+            <file>file:/C:/Users/cri_r/Documents/ClinicManagementSystem/src/java/com/ClinicManagementSystem/Dto/PatientDto/PatientDto.java</file>
+            <file>file:/C:/Users/cri_r/Documents/ClinicManagementSystem/web/patientInfo.jsp</file>
+            <file>file:/C:/Users/cri_r/Documents/ClinicManagementSystem/src/java/com/ClinicManagementSystem/Controller/DoctorController/DoctorController.java</file>
         </group>
     </open-files>
 </project-private>

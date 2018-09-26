@@ -15,4 +15,6 @@ public class QueryUtil {
     public static final String CREATE_DOCTOR = "insert into doctor_info(email,password,firstname,lastname,specialization)values(?,?,?,?,?)";
     public static final String SELECT_PATIENT = "select * from patient_info";
     public static final String SELECT_DOCTOR = "select * from doctor_info";
+    public static final String LOGIN_ADMIN = "select * from admin where username=? and password=?";
+    public static final String LOGIN_PATIENT = "select * from patient_info where email=? and password=?";
 }

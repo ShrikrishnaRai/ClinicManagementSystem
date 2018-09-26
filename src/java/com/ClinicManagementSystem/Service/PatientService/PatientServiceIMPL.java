@@ -31,4 +31,12 @@ public class PatientServiceIMPL implements PatientService {
         return patientDao_Ic.getPatientInfo();
     }
 
+    @Override
+    public boolean loginPatient(String username, String password) {
+        if(patientDao_Ic.loginPatient(username, password)){
+            return true;
+        }
+        return false;
+    }
+
 }

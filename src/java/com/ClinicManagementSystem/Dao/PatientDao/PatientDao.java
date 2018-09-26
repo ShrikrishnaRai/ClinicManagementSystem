@@ -17,4 +17,6 @@ public interface PatientDao {
     public void savePatientInfo(PatientDto patientDto_Ic);
 
     public List<PatientDto> getPatientInfo();
+
+    public boolean loginPatient(String username, String password);
 }
