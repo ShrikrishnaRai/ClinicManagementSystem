@@ -10,6 +10,9 @@ import com.ClinicManagementSystem.Service.AdminService.AdminService;
 import com.ClinicManagementSystem.Service.AdminService.AdminServiceIMPL;
 import com.ClinicManagementSystem.Service.PatientService.PatientService;
 import com.ClinicManagementSystem.Service.PatientService.PatientServiceIMPL;
+import static com.ClinicManagementSystem.Util.PageURL.APPOINTMENT_PAGE;
+import static com.ClinicManagementSystem.Util.PageURL.HOME_PAGE;
+import static com.ClinicManagementSystem.Util.PageURL.INDEX_PAGE;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -27,9 +30,6 @@ public class LoginController extends HttpServlet {
 
     AdminService adminService_Ic = new AdminServiceIMPL();
     PatientService patientSerivce_Ic = new PatientServiceIMPL();
-    public static final String ADMIN_PAGE = "admin.jsp";
-    public static final String INDEX_PAGE = "index.jsp";
-    public static final String APPOINTMENT_PAGE = "appointment.jsp";
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -39,7 +39,7 @@ public class LoginController extends HttpServlet {
             adminDto.setUsername(req.getParameter("username"));
             adminDto.setPassword(req.getParameter("password"));
             if (adminService_Ic.login(adminDto.getUsername(), adminDto.getPassword())) {
-                RequestDispatcher rd = req.getRequestDispatcher(ADMIN_PAGE);
+                RequestDispatcher rd = req.getRequestDispatcher(HOME_PAGE);
                 rd.forward(req, resp);
             } else {
                 RequestDispatcher rd = req.getRequestDispatcher(INDEX_PAGE);
@@ -48,7 +48,6 @@ public class LoginController extends HttpServlet {
             }
         }
         if ("Doctor".equals(req.getParameter("role").toString())) {
-
             RequestDispatcher rd = req.getRequestDispatcher(INDEX_PAGE);
             req.setAttribute("message", "To be performed by Admin");
             rd.forward(req, resp);

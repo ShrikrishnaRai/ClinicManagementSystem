@@ -10,6 +10,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="shortcut icon" type="image/x-icon" href="https://www.shareicon.net/download/2016/07/12/795016_medical_512x512.png" />
+
         <title>Patient Info</title>
     </head>
     <body>
@@ -28,8 +30,8 @@
                         <tr>
                             <td>
                                 <c:out value="${patient.id}"></c:out>
-                            </td>
-                            <td>
+                                </td>
+                                <td>
                                 <c:out value="${patient.firstName}"></c:out>
                                 </td>
                                 <td>

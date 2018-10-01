@@ -8,6 +8,7 @@ package com.ClinicManagementSystem.Controller.PatientController;
 import com.ClinicManagementSystem.Service.PatientService.PatientService;
 import com.ClinicManagementSystem.Service.PatientService.PatientServiceIMPL;
 import com.ClinicManagementSystem.Dto.PatientDto.PatientDto;
+import static com.ClinicManagementSystem.Util.PageURL.PATIENTINFO_PAGE;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,7 +16,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -24,7 +24,7 @@ import javax.swing.JOptionPane;
 @WebServlet("/PatientController")
 public class PatientController extends HttpServlet {
 
-    private static final String PATIENT_PAGE = "patientInfo.jsp";
+   
 
     private static final long serialVersionUID = 1L;
     PatientService patientService_Ic = new PatientServiceIMPL();
@@ -37,7 +37,7 @@ public class PatientController extends HttpServlet {
         patientDto_Ic.setEmail(req.getParameter("email"));
         patientDto_Ic.setPassword(req.getParameter("password"));
         patientService_Ic.savePatientInfo(patientDto_Ic);
-        RequestDispatcher rd = req.getRequestDispatcher(PATIENT_PAGE);
+        RequestDispatcher rd = req.getRequestDispatcher(PATIENTINFO_PAGE);
         req.setAttribute("patient", patientService_Ic.getPatientInfo());
         rd.forward(req, resp);
     }
