@@ -5,7 +5,7 @@
  */
 package com.ClinicManagementSystem.Dao.DoctorAppointmentScheduleDao;
 
-import com.ClinicManagementSystem.Dto.DoctorAppointmentScheduleDto.DoctorAppointmentScheduleDto;
+import com.ClinicManagementSystem.Model.DoctorAppointmentScheduleDto.DoctorAppointmentScheduleDto;
 import com.ClinicManagementSystem.Util.DbUtil;
 import com.ClinicManagementSystem.Util.QueryUtil;
 import java.sql.PreparedStatement;

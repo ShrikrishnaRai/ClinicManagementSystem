@@ -5,7 +5,7 @@
  */
 package com.ClinicManagementSystem.Controller.DoctorController;
 
-import com.ClinicManagementSystem.Dto.DoctorDto.DoctorDto;
+import com.ClinicManagementSystem.Model.DoctorDto.DoctorDto;
 import com.ClinicManagementSystem.Service.DoctorService.DoctorService;
 import com.ClinicManagementSystem.Service.DoctorService.DoctorServiceIMPL;
 import java.io.IOException;

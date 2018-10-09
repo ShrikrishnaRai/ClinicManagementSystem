@@ -7,7 +7,7 @@ package com.ClinicManagementSystem.Service.AppointmentService;
 
 import com.ClinicManagementSystem.Dao.AppointmentDao.ApointmentDaoIMPL;
 import com.ClinicManagementSystem.Dao.AppointmentDao.AppointmentDao;
-import com.ClinicManagementSystem.Dto.AppointmentDto.AppointmentDto;
+import com.ClinicManagementSystem.Model.AppointmentDto.AppointmentDto;
 
 /**
  *

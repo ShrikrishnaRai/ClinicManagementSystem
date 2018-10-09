@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.ClinicManagementSystem.Dto.DoctorAppointmentScheduleDto;
+package com.ClinicManagementSystem.Model.DoctorAppointmentScheduleDto;
 
 import java.util.Date;
 

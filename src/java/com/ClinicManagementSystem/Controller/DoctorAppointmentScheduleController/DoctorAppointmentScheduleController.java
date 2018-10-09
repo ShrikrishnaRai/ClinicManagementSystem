@@ -6,7 +6,7 @@
 package com.ClinicManagementSystem.Controller.DoctorAppointmentScheduleController;
 
 import com.ClinicManagementSystem.Controller.AppointmentController.AppointmentController;
-import com.ClinicManagementSystem.Dto.DoctorAppointmentScheduleDto.DoctorAppointmentScheduleDto;
+import com.ClinicManagementSystem.Model.DoctorAppointmentScheduleDto.DoctorAppointmentScheduleDto;
 import com.ClinicManagementSystem.Service.DoctorAppointmentScheduleService.DoctorAppointmentScheduleService;
 import com.ClinicManagementSystem.Service.DoctorAppointmentScheduleService.DoctorAppointmentScheduleServiceIMPL;
 import static com.ClinicManagementSystem.Util.PageURL.APPOINTMENT_PAGE;

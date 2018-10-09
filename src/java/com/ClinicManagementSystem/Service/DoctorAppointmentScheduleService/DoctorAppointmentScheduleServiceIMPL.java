@@ -7,7 +7,7 @@ package com.ClinicManagementSystem.Service.DoctorAppointmentScheduleService;
 
 import com.ClinicManagementSystem.Dao.DoctorAppointmentScheduleDao.DoctorAppointmentScheduleDao;
 import com.ClinicManagementSystem.Dao.DoctorAppointmentScheduleDao.DoctorAppointmentScheduleDaoIMPL;
-import com.ClinicManagementSystem.Dto.DoctorAppointmentScheduleDto.DoctorAppointmentScheduleDto;
+import com.ClinicManagementSystem.Model.DoctorAppointmentScheduleDto.DoctorAppointmentScheduleDto;
 import java.util.Date;
 
 /**

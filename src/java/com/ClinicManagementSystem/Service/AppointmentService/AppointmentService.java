@@ -5,7 +5,7 @@
  */
 package com.ClinicManagementSystem.Service.AppointmentService;
 
-import com.ClinicManagementSystem.Dto.AppointmentDto.AppointmentDto;
+import com.ClinicManagementSystem.Model.AppointmentDto.AppointmentDto;
 
 /**
  *

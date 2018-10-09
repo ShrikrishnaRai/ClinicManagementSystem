@@ -5,7 +5,7 @@
  */
 package com.ClinicManagementSystem.Dao.DoctorDao;
 
-import com.ClinicManagementSystem.Dto.DoctorDto.DoctorDto;
+import com.ClinicManagementSystem.Model.DoctorDto.DoctorDto;
 import com.ClinicManagementSystem.Util.DbUtil;
 import com.ClinicManagementSystem.Util.QueryUtil;
 import java.sql.PreparedStatement;

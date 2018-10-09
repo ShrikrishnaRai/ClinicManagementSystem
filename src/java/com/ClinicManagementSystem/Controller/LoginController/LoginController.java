@@ -5,7 +5,7 @@
  */
 package com.ClinicManagementSystem.Controller.LoginController;
 
-import com.ClinicManagementSystem.Dto.LoginDto.LoginDto;
+import com.ClinicManagementSystem.Model.LoginDto.LoginDto;
 import com.ClinicManagementSystem.Service.AdminService.AdminService;
 import com.ClinicManagementSystem.Service.AdminService.AdminServiceIMPL;
 import com.ClinicManagementSystem.Service.PatientService.PatientService;

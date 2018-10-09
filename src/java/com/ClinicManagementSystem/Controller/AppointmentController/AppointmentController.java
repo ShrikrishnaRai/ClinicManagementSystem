@@ -5,7 +5,7 @@
  */
 package com.ClinicManagementSystem.Controller.AppointmentController;
 
-import com.ClinicManagementSystem.Dto.AppointmentDto.AppointmentDto;
+import com.ClinicManagementSystem.Model.AppointmentDto.AppointmentDto;
 import com.ClinicManagementSystem.Service.AppointmentService.AppointmentService;
 import com.ClinicManagementSystem.Service.AppointmentService.AppointmentServiceIMPL;
 import com.ClinicManagementSystem.Service.DoctorAppointmentScheduleService.DoctorAppointmentScheduleService;

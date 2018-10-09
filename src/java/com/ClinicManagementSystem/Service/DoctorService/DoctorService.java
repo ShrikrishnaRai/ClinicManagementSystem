@@ -5,7 +5,7 @@
  */
 package com.ClinicManagementSystem.Service.DoctorService;
 
-import com.ClinicManagementSystem.Dto.DoctorDto.DoctorDto;
+import com.ClinicManagementSystem.Model.DoctorDto.DoctorDto;
 import java.util.List;
 
 /**

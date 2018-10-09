@@ -7,7 +7,7 @@ package com.ClinicManagementSystem.Dao.PatientDao;
 
 import com.ClinicManagementSystem.Util.DbUtil;
 import com.ClinicManagementSystem.Util.QueryUtil;
-import com.ClinicManagementSystem.Dto.PatientDto.PatientDto;
+import com.ClinicManagementSystem.Model.PatientDto.PatientDto;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;

@@ -7,7 +7,7 @@ package com.ClinicManagementSystem.Service.PatientService;
 
 import com.ClinicManagementSystem.Dao.PatientDao.PatientDao;
 import com.ClinicManagementSystem.Dao.PatientDao.PatientDaoIMPL;
-import com.ClinicManagementSystem.Dto.PatientDto.PatientDto;
+import com.ClinicManagementSystem.Model.PatientDto.PatientDto;
 import java.util.List;
 
 /**

@@ -7,7 +7,7 @@ package com.ClinicManagementSystem.Controller.PatientController;
 
 import com.ClinicManagementSystem.Service.PatientService.PatientService;
 import com.ClinicManagementSystem.Service.PatientService.PatientServiceIMPL;
-import com.ClinicManagementSystem.Dto.PatientDto.PatientDto;
+import com.ClinicManagementSystem.Model.PatientDto.PatientDto;
 import static com.ClinicManagementSystem.Util.PageURL.PATIENTINFO_PAGE;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
