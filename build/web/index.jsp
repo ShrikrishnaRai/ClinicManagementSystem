@@ -18,17 +18,19 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     </head>
     <body>
-        <form action="LoginController" method="post">
-            Email:<input type="text" class="form-control"  name="username"/>
-            Password:<input type="text" class="form-control" name="password"/>
-            <select name="role">
-                <option value="Admin">Admin</option>
-                <option value="Doctor">Doctor</option>
-                <option value="Patient">Patient</option>
-            </select>
-            <br><br>
-            <input type="submit"  class="btn btn-primary" value="Login"/>
-        </form>
+        <div>
+            <form action="LoginController" method="post">
+                Email: <input type="text" class="form-control"  name="username" style="width:15%; margin-left:  0.5%"/>
+                Password:<input type="text" class="form-control" name="password"/>
+                <select name="role">
+                    <option value="Admin">Admin</option>
+                    <option value="Doctor">Doctor</option>
+                    <option value="Patient">Patient</option>
+                </select>
+                <br><br>
+                <input type="submit"  class="btn btn-primary" value="Login"/>
+            </form>
+        </div>
         else
         <br><br>
         <a href="Signup.jsp">SignUp Here</a>

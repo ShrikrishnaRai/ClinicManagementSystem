@@ -8,6 +8,8 @@ package com.ClinicManagementSystem.Controller.AppointmentController;
 import com.ClinicManagementSystem.Dto.AppointmentDto.AppointmentDto;
 import com.ClinicManagementSystem.Service.AppointmentService.AppointmentService;
 import com.ClinicManagementSystem.Service.AppointmentService.AppointmentServiceIMPL;
+import com.ClinicManagementSystem.Service.DoctorAppointmentScheduleService.DoctorAppointmentScheduleService;
+import com.ClinicManagementSystem.Service.DoctorAppointmentScheduleService.DoctorAppointmentScheduleServiceIMPL;
 import com.ClinicManagementSystem.Service.DoctorService.DoctorService;
 import com.ClinicManagementSystem.Service.DoctorService.DoctorServiceIMPL;
 import static com.ClinicManagementSystem.Util.PageURL.APPOINTMENT_PAGE;
@@ -31,6 +33,7 @@ import javax.servlet.http.HttpServletResponse;
 public class AppointmentController extends HttpServlet {
 
     AppointmentService appointmentService_Ic = new AppointmentServiceIMPL();
+    DoctorAppointmentScheduleService doctorAppointmentScheduleService_Ic = new DoctorAppointmentScheduleServiceIMPL();
     DoctorService doctorService_Ic = new DoctorServiceIMPL();
 
     @Override
@@ -47,7 +50,10 @@ public class AppointmentController extends HttpServlet {
         }
         appointmentDto.setAppointmentTime(req.getParameter("time"));
         appointmentDto.setPatientProblem(req.getParameter("problem"));
+
         if (appointmentService_Ic.checkDoctor(appointmentDto.getDoctorName(), appointmentDto.getDoctorLastName())) {
+            if (doctorAppointmentScheduleService_Ic.checkDoctorAvailability(APPOINTMENT_PAGE, APPOINTMENT_PAGE, appointmentDto.getAppointmentDate(), appointmentDto.getDoctorName(), appointmentDto.getDoctorLastName())) {
+            }
             appointmentService_Ic.saveAppointment(appointmentDto);
             RequestDispatcher rd = req.getRequestDispatcher(APPOINTMENT_PAGE);
             req.setAttribute("message", "Your Appointment Saved");

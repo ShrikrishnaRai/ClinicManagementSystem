@@ -9,6 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="shortcut icon" type="image/x-icon" href="https://www.shareicon.net/download/2016/07/12/795016_medical_512x512.png" />
         <title>Admin Page</title>
     </head>
     <body>
@@ -20,6 +21,10 @@
             Specialization:<input type="text" name="specialization"><br><br>
             Password:<input type="password" name="password"><br><br>
             <input type="submit" value="submit">
+        </form>
+        Send Report Email
+        <form action="DcotorController" method="post">
+            File:<input type="file" name="file" size="50"><br><br>
         </form>
     </body>
 </html>

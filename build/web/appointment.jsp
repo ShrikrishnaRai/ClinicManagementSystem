@@ -27,6 +27,7 @@
                             <th>Lastname</th>
                             <th>Email</th>
                             <th>Specialization</th>
+                            <th>Maintain</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -47,7 +48,11 @@
                                     <td>
                                     <c:out value="${doctor.specialization}"></c:out>
                                     </td>
-                                </tr>
+                                    <td>
+                                        <a href="AdminController?actions=delete&id=<c:out value="${doctor.id}"/>">Delete</a>
+                                    <a href="AdminController?actions=edit&id=<c:out value="${doctor.id}"/>">Edit</a>
+                                </td>
+                            </tr>
 
                         </c:forEach>
                     </tbody>
@@ -67,6 +72,8 @@
         <c:if test="${!empty message}">
             <c:out value="${message}"></c:out>
         </c:if>
+
+
 
 
     </body>

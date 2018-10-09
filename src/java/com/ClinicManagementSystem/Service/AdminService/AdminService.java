@@ -10,5 +10,8 @@ package com.ClinicManagementSystem.Service.AdminService;
  * @author cri_r
  */
 public interface AdminService {
-    public boolean login(String username,String password);
+
+    public boolean login(String username, String password);
+
+    public void deleteDoctor(int id);
 }

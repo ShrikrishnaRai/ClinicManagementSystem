@@ -5,6 +5,7 @@
  */
 package com.ClinicManagementSystem.Dto.AppointmentDto;
 
+import java.sql.Time;
 import java.util.Date;
 
 /**
@@ -68,6 +69,8 @@ public class AppointmentDto {
     public void setAppointmentTime(String appointmentTime) {
         this.appointmentTime = appointmentTime;
     }
+
+
 
     public String getPatientProblem() {
         return patientProblem;

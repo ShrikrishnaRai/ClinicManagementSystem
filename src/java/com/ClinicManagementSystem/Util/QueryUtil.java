@@ -17,6 +17,9 @@ public class QueryUtil {
     public static final String SELECT_DOCTOR = "select * from doctor_info";
     public static final String LOGIN_ADMIN = "select * from admin where username=? and password=?";
     public static final String LOGIN_PATIENT = "select * from patient_info where email=? and password=?";
-    public static final String CHECK_DOCTOR = "select firstname , lastname from doctor_info where firstname=? and lastname=?";
+    public static final String CHECK_DOCTOR = "select * from doctor_info where firstname=? and lastname=?";
     public static final String SAVE_APPOINTMENT = "insert into appointmentInfo(doctorname,doctorlastname,patientname,appointmentdate,appointmenttime,patientproblem) values(?,?,?,?,?,?)";
+    public static final String CREATE_DOCTOR_APPOINTMENT_SCHEDULE = "insert into appointmentschedule(doctorfirstname,doctorlastname,starttime,endtime,date)values(?,?,?,?,?)";
+    public static final String CHECK_APPOINTMENT_AVAILABILITY = "select * from apointmentschedule where starttime=? and endtime=? and date=? and doctorfirstname=? and doctorlastname=?";
+    public static final String DELETE_DOCTOR = "delete from doctor_info where id=?";
 }

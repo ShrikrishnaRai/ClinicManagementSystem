@@ -41,4 +41,17 @@ public class AdminDaoIMPL implements AdminDao {
         return false;
     }
 
+    @Override
+    public void deleteDoctor(int id) {
+        try {
+            ps = DbUtil.getConnection().prepareStatement(QueryUtil.DELETE_DOCTOR);
+            ps.setInt(1, id);
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(AdminDaoIMPL.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(AdminDaoIMPL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
 }

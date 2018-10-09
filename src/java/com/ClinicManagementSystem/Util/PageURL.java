@@ -18,4 +18,5 @@ public class PageURL {
     public static final String PATIENTINFO_PAGE = "patientInfo.jsp";
     public static final String SIGNUP_PAGE = "Signup.jsp";
     public static final String ADMIN_PAGE = "admin.jsp";
+    public static final String DOCTORAPPOINTSCHEDULE_PAGE = "appointmentschedule.jsp";
 }

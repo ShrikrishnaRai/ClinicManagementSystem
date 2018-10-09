@@ -28,4 +28,9 @@ public class AdminServiceIMPL implements AdminService {
         return false;
     }
 
+    @Override
+    public void deleteDoctor(int id) {
+        adminDao_Ic.deleteDoctor(id);
+    }
+
 }

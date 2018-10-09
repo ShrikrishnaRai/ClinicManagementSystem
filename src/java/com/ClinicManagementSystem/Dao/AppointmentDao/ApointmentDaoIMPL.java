@@ -26,6 +26,8 @@ public class ApointmentDaoIMPL implements AppointmentDao {
     public boolean checkDoctor(String firstname, String lastname) {
         try {
             ps = DbUtil.getConnection().prepareStatement(QueryUtil.CHECK_DOCTOR);
+            ps.setString(1, firstname);
+            ps.setString(2, lastname);
             ResultSet rs_Dco = ps.executeQuery();
             if (rs_Dco.next()) {
                 return true;
