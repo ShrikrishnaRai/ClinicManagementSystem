@@ -22,9 +22,6 @@
             Password:<input type="password" name="password"><br><br>
             <input type="submit" value="submit">
         </form>
-        Send Report Email
-        <form action="DcotorController" method="post">
-            File:<input type="file" name="file" size="50"><br><br>
-        </form>
+       
     </body>
 </html>

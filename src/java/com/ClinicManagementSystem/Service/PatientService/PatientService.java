@@ -6,6 +6,7 @@
 package com.ClinicManagementSystem.Service.PatientService;
 
 import com.ClinicManagementSystem.Model.PatientDto.PatientDto;
+import com.ClinicManagementSystem.Model.ReportDto.ReportDto;
 import java.util.List;
 
 /**
@@ -17,6 +18,12 @@ public interface PatientService {
     public void savePatientInfo(PatientDto patientDto_Ic);
 
     public List<PatientDto> getPatientInfo();
-    
+
     public boolean loginPatient(String username, String password);
+
+    public List<ReportDto> getPatientReport(String patientFirstName, String patientLastName);
+
+    public List<PatientDto> getPatientDetail(String email);
+    
+
 }

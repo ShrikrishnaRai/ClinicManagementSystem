@@ -37,6 +37,7 @@ public class DoctorController extends HttpServlet {
         doctorService_Ic.saveDoctorInfo(doctorDto);
         RequestDispatcher rd = req.getRequestDispatcher(DOCTOR_PAGE);
         req.setAttribute("doctor", doctorService_Ic.getDoctorInfo());
+        req.setAttribute("message", "Sucessfully Created Doctor's Account");
         rd.forward(req, resp);
     }
 

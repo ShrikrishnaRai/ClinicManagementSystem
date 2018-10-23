@@ -17,6 +17,9 @@
         <form action="HomeController" method="post">
             <input type="submit" value="Appointment" name="action"/>
             <input type="submit" value="Doctor" name="action"/> 
+            <input type="submit" value="report" name="action"/>
+        </form>
+        <form>
         </form>
 
     </body>

@@ -16,7 +16,10 @@ public class PageURL {
     public static final String HOME_PAGE = "home.jsp";
     public static final String INDEX_PAGE = "index.jsp";
     public static final String PATIENTINFO_PAGE = "patientInfo.jsp";
-    public static final String SIGNUP_PAGE = "Signup.jsp";
+    public static final String SIGNUP_PAGE = "signup.jsp";
     public static final String ADMIN_PAGE = "admin.jsp";
     public static final String DOCTORAPPOINTSCHEDULE_PAGE = "appointmentschedule.jsp";
+    public static final String GENERATEREPORT_PAGE = "generateReport.jsp";
+    public static final String PATIENT_PAGE = "patient.jsp";
+    public static final String DOCTOR_PAGE="doctorpage.jsp";
 }

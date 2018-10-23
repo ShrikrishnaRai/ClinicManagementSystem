@@ -15,5 +15,8 @@ public interface AppointmentDao {
 
     public boolean checkDoctor(String firstname, String lastname);
 
+    public boolean checkPatient(String firstname, String lastname);
+
     public void saveAppointment(AppointmentDto appointmentDto);
+
 }

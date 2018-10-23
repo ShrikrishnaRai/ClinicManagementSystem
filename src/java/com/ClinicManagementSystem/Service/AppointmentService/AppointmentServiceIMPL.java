@@ -35,4 +35,12 @@ public class AppointmentServiceIMPL implements AppointmentService {
         appointmentDao_Ic.saveAppointment(appointmentDto);
     }
 
+    @Override
+    public boolean checkPatient(String firstname, String lastname) {
+        if (appointmentDao_Ic.checkPatient(firstname, lastname)) {
+            return true;
+        }
+        return false;
+    }
+
 }

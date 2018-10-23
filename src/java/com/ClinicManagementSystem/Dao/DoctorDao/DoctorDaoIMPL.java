@@ -5,6 +5,7 @@
  */
 package com.ClinicManagementSystem.Dao.DoctorDao;
 
+import com.ClinicManagementSystem.Model.AppointmentDto.AppointmentDto;
 import com.ClinicManagementSystem.Model.DoctorDto.DoctorDto;
 import com.ClinicManagementSystem.Util.DbUtil;
 import com.ClinicManagementSystem.Util.QueryUtil;
@@ -63,6 +64,51 @@ public class DoctorDaoIMPL implements DoctorDao {
         }
         return doctorDtoList;
 
+    }
+
+    @Override
+    public boolean loginDoctor(String username, String password) {
+        try {
+            ps = DbUtil.getConnection().prepareStatement(QueryUtil.LOGIN_DOCTOR);
+            ps.setString(1, username);
+            ps.setString(2, password);
+            ResultSet rs_Dco = ps.executeQuery();
+            if (rs_Dco.next()) {
+                return true;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DoctorDaoIMPL.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(DoctorDaoIMPL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
+
+    @Override
+    public List<AppointmentDto> checkAppointment(String email) {
+        List<AppointmentDto> appointmentDtoList = new ArrayList<>();
+        try {
+            ps = DbUtil.getConnection().prepareStatement(QueryUtil.CHECK_DOCTOR_APPOINTMENT);
+            ps.setString(1, email);
+            ResultSet rs_Dco = ps.executeQuery();
+            while (rs_Dco.next()) {
+                AppointmentDto appointmentDto = new AppointmentDto();
+                appointmentDto.setId(Integer.parseInt(rs_Dco.getString("id")));
+                appointmentDto.setPatientName(rs_Dco.getString("patientName"));
+                appointmentDto.setDoctorName(rs_Dco.getString("doctorName"));
+                appointmentDto.setDoctorLastName(rs_Dco.getString("doctorLastName"));
+                appointmentDto.setPatientProblem(rs_Dco.getString("patientProblem"));
+                appointmentDto.setAppointmentDate(rs_Dco.getDate("appointmentDate"));
+                appointmentDto.setAppointmentTime(rs_Dco.getString("appointmentTime"));
+                appointmentDtoList.add(appointmentDto);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DoctorDaoIMPL.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(DoctorDaoIMPL.class.getName()).log(Level.SEVERE, null, ex);
+
+        }
+        return appointmentDtoList;
     }
 
 }

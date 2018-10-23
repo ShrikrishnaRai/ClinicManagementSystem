@@ -5,6 +5,8 @@
  */
 package com.ClinicManagementSystem.Service.AdminService;
 
+import com.ClinicManagementSystem.Model.ReportDto.ReportDto;
+
 /**
  *
  * @author cri_r
@@ -14,4 +16,6 @@ public interface AdminService {
     public boolean login(String username, String password);
 
     public void deleteDoctor(int id);
+    
+    public void saveReport(ReportDto reportDto);
 }

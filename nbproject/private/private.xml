@@ -2,6 +2,23 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/cri_r/Documents/ClinicManagementSystem/web/doctorpage.jsp</file>
+            <file>file:/C:/Users/cri_r/Documents/ClinicManagementSystem/web/doctorInfo.jsp</file>
+            <file>file:/C:/Users/cri_r/Documents/ClinicManagementSystem/src/java/com/ClinicManagementSystem/Controller/LoginController/LoginController.java</file>
+            <file>file:/C:/Users/cri_r/Documents/ClinicManagementSystem/web/generateReport.jsp</file>
+            <file>file:/C:/Users/cri_r/Documents/ClinicManagementSystem/src/java/com/ClinicManagementSystem/Util/QueryUtil.java</file>
+            <file>file:/C:/Users/cri_r/Documents/ClinicManagementSystem/src/java/com/ClinicManagementSystem/Dao/PatientDao/PatientDaoIMPL.java</file>
+            <file>file:/C:/Users/cri_r/Documents/ClinicManagementSystem/web/signupdoctor.jsp</file>
+            <file>file:/C:/Users/cri_r/Documents/ClinicManagementSystem/src/java/com/ClinicManagementSystem/Controller/DoctorController/DoctorController.java</file>
+            <file>file:/C:/Users/cri_r/Documents/ClinicManagementSystem/src/java/com/ClinicManagementSystem/Dao/PatientDao/PatientDao.java</file>
+            <file>file:/C:/Users/cri_r/Documents/ClinicManagementSystem/web/home.jsp</file>
+            <file>file:/C:/Users/cri_r/Documents/ClinicManagementSystem/src/java/com/ClinicManagementSystem/Service/DoctorService/DoctorService.java</file>
+            <file>file:/C:/Users/cri_r/Documents/ClinicManagementSystem/src/java/com/ClinicManagementSystem/Dao/DoctorDao/DoctorDao.java</file>
+            <file>file:/C:/Users/cri_r/Documents/ClinicManagementSystem/src/java/com/ClinicManagementSystem/Controller/HomeController/HomeController.java</file>
+            <file>file:/C:/Users/cri_r/Documents/ClinicManagementSystem/src/java/com/ClinicManagementSystem/Util/PageURL.java</file>
+            <file>file:/C:/Users/cri_r/Documents/ClinicManagementSystem/src/java/com/ClinicManagementSystem/Dao/DoctorDao/DoctorDaoIMPL.java</file>
+            <file>file:/C:/Users/cri_r/Documents/ClinicManagementSystem/src/java/com/ClinicManagementSystem/Service/DoctorService/DoctorServiceIMPL.java</file>
+        </group>
     </open-files>
 </project-private>

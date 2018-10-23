@@ -8,6 +8,7 @@ package com.ClinicManagementSystem.Service.PatientService;
 import com.ClinicManagementSystem.Dao.PatientDao.PatientDao;
 import com.ClinicManagementSystem.Dao.PatientDao.PatientDaoIMPL;
 import com.ClinicManagementSystem.Model.PatientDto.PatientDto;
+import com.ClinicManagementSystem.Model.ReportDto.ReportDto;
 import java.util.List;
 
 /**
@@ -22,6 +23,7 @@ public class PatientServiceIMPL implements PatientService {
         patientDao_Ic = new PatientDaoIMPL();
     }
 
+    @Override
     public void savePatientInfo(PatientDto patientDto_Ic) {
         patientDao_Ic.savePatientInfo(patientDto_Ic);
     }
@@ -33,10 +35,17 @@ public class PatientServiceIMPL implements PatientService {
 
     @Override
     public boolean loginPatient(String username, String password) {
-        if(patientDao_Ic.loginPatient(username, password)){
-            return true;
-        }
-        return false;
+        return patientDao_Ic.loginPatient(username, password);
+    }
+
+    @Override
+    public List<ReportDto> getPatientReport(String patientFirstName, String patientLastName) {
+        return patientDao_Ic.getPatientReport(patientFirstName, patientLastName);
+    }
+
+    @Override
+    public List<PatientDto> getPatientDetail(String email) {
+        return patientDao_Ic.getPatientDetail(email);
     }
 
 }

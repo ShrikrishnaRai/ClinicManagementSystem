@@ -12,7 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="shortcut icon" type="image/x-icon" href="https://www.shareicon.net/download/2016/07/12/795016_medical_512x512.png" />
 
-        <title>JSP Page</title>
+        <title>Doctor's Info</title>
     </head>
     <body>
         <c:if test="${!empty doctor}">
@@ -50,5 +50,11 @@
                 </tbody>
             </table>
         </c:if>
+        <c:if test="${!empty message}">
+            <c:out value="${message}"></c:out>
+        </c:if>
+        <br><br>
+        <a href="signupdoctor.jsp">Create Doctor's Account</a>
+
     </body>
 </html>

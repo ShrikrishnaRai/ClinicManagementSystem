@@ -6,6 +6,7 @@
 package com.ClinicManagementSystem.Dao.PatientDao;
 
 import com.ClinicManagementSystem.Model.PatientDto.PatientDto;
+import com.ClinicManagementSystem.Model.ReportDto.ReportDto;
 import java.util.List;
 
 /**
@@ -19,4 +20,9 @@ public interface PatientDao {
     public List<PatientDto> getPatientInfo();
 
     public boolean loginPatient(String username, String password);
+
+    public List<ReportDto> getPatientReport(String patientFirstName, String patientLastName);
+
+    public List<PatientDto> getPatientDetail(String email);
+
 }

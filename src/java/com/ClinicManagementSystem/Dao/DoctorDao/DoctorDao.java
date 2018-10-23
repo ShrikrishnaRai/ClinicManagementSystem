@@ -5,6 +5,7 @@
  */
 package com.ClinicManagementSystem.Dao.DoctorDao;
 
+import com.ClinicManagementSystem.Model.AppointmentDto.AppointmentDto;
 import com.ClinicManagementSystem.Model.DoctorDto.DoctorDto;
 import java.util.List;
 
@@ -17,4 +18,8 @@ public interface DoctorDao {
     public void saveDoctorInfo(DoctorDto doctorDto);
 
     public List selectDoctor();
+    
+    public boolean loginDoctor(String username, String password);
+    
+    public List<AppointmentDto> checkAppointment(String email);
 }

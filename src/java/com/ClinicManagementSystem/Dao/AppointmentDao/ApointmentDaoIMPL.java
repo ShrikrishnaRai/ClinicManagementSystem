@@ -61,4 +61,22 @@ public class ApointmentDaoIMPL implements AppointmentDao {
         }
     }
 
+    @Override
+    public boolean checkPatient(String firstname, String lastname) {
+        try {
+            ps = DbUtil.getConnection().prepareStatement(QueryUtil.CHECK_PATIENT);
+            ps.setString(1, firstname);
+            ps.setString(2, lastname);
+            ResultSet rc_Dco = ps.executeQuery();
+            if(rc_Dco.next()){
+                return true;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ApointmentDaoIMPL.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ApointmentDaoIMPL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
+
 }
