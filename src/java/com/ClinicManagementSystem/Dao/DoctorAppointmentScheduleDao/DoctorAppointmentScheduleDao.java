@@ -16,5 +16,4 @@ public interface DoctorAppointmentScheduleDao {
 
     public void saveDoctorAppointmentSchedule(DoctorAppointmentScheduleDto doctorAppointmentSchedule);
 
-    public boolean checkAvailability(String starttime, String endtime, Date date, String doctorfirstname, String doctorlastname);
 }

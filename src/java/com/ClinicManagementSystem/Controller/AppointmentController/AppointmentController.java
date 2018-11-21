@@ -13,6 +13,7 @@ import com.ClinicManagementSystem.Service.DoctorAppointmentScheduleService.Docto
 import com.ClinicManagementSystem.Service.DoctorService.DoctorService;
 import com.ClinicManagementSystem.Service.DoctorService.DoctorServiceIMPL;
 import static com.ClinicManagementSystem.Util.PageURL.APPOINTMENT_PAGE;
+import static com.ClinicManagementSystem.Util.PageURL.DOCTORINFO_PAGE;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -50,12 +51,12 @@ public class AppointmentController extends HttpServlet {
         }
         appointmentDto.setAppointmentTime(req.getParameter("time"));
         appointmentDto.setPatientProblem(req.getParameter("problem"));
+        appointmentDto.setEmail(req.getParameter("email"));
+        appointmentDto.setPatientEmail(req.getParameter("patientEmail"));
 
         if (appointmentService_Ic.checkDoctor(appointmentDto.getDoctorName(), appointmentDto.getDoctorLastName())) {
-            if (doctorAppointmentScheduleService_Ic.checkDoctorAvailability(APPOINTMENT_PAGE, APPOINTMENT_PAGE, appointmentDto.getAppointmentDate(), appointmentDto.getDoctorName(), appointmentDto.getDoctorLastName())) {
-            }
             appointmentService_Ic.saveAppointment(appointmentDto);
-            RequestDispatcher rd = req.getRequestDispatcher(APPOINTMENT_PAGE);
+            RequestDispatcher rd = req.getRequestDispatcher(DOCTORINFO_PAGE);
             req.setAttribute("message", "Your Appointment Saved");
             req.setAttribute("doctor", doctorService_Ic.getDoctorInfo());
             rd.forward(req, resp);

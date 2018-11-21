@@ -16,5 +16,4 @@ public interface DoctorAppointmentScheduleService {
 
     public void saveDoctorAppointmentSchedule(DoctorAppointmentScheduleDto DoctorAppointmentSchedule);
 
-    public boolean checkDoctorAvailability(String starttime, String endtime, Date date,String firstname,String lastname);
 }

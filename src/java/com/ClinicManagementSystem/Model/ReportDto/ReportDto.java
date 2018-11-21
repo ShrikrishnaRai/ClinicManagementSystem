@@ -14,6 +14,7 @@ public class ReportDto {
     private int id;
     private String patientFirstName;
     private String patientLastName;
+    private String email;
     private String doctorFirstName;
     private String doctorLastName;
     private String disease;
@@ -21,6 +22,14 @@ public class ReportDto {
     private String bloodPressure;
     private String sugarLevel;
     private String remarks;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public int getId() {
         return id;

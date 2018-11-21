@@ -7,6 +7,7 @@ package com.ClinicManagementSystem.Service.PatientService;
 
 import com.ClinicManagementSystem.Dao.PatientDao.PatientDao;
 import com.ClinicManagementSystem.Dao.PatientDao.PatientDaoIMPL;
+import com.ClinicManagementSystem.Model.AppointmentDto.AppointmentDto;
 import com.ClinicManagementSystem.Model.PatientDto.PatientDto;
 import com.ClinicManagementSystem.Model.ReportDto.ReportDto;
 import java.util.List;
@@ -17,7 +18,7 @@ import java.util.List;
  */
 public class PatientServiceIMPL implements PatientService {
 
-    private PatientDao patientDao_Ic;
+    private final PatientDao patientDao_Ic;
 
     public PatientServiceIMPL() {
         patientDao_Ic = new PatientDaoIMPL();
@@ -39,13 +40,23 @@ public class PatientServiceIMPL implements PatientService {
     }
 
     @Override
-    public List<ReportDto> getPatientReport(String patientFirstName, String patientLastName) {
-        return patientDao_Ic.getPatientReport(patientFirstName, patientLastName);
+    public List<ReportDto> getPatientReport(String email) {
+        return patientDao_Ic.getPatientReport(email);
     }
 
     @Override
     public List<PatientDto> getPatientDetail(String email) {
         return patientDao_Ic.getPatientDetail(email);
+    }
+
+    @Override
+    public List<AppointmentDto> getAppointmentPatient(String email) {
+        return patientDao_Ic.checkAppointment(email);
+    }
+
+    @Override
+    public void deleteAppointment(int id) {
+        patientDao_Ic.deleteAppointment(id);
     }
 
 }

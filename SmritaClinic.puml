@@ -1,0 +1,288 @@
+@startuml
+annotation java.lang.Override
+annotation javax.servlet.annotation.WebServlet
+class com.ClinicManagementSystem.Controller.AdminController.AdminController
+class com.ClinicManagementSystem.Controller.AppointmentController.AppointmentController
+class com.ClinicManagementSystem.Controller.DoctorAppointmentScheduleController.DoctorAppointmentScheduleController
+class com.ClinicManagementSystem.Controller.DoctorController.DoctorController
+class com.ClinicManagementSystem.Controller.HomeController.HomeController
+class com.ClinicManagementSystem.Controller.LoginController.LoginController
+class com.ClinicManagementSystem.Controller.PatientController.PatientController
+class com.ClinicManagementSystem.Dao.AdminDao.AdminDaoIMPL
+class com.ClinicManagementSystem.Dao.AppointmentDao.ApointmentDaoIMPL
+class com.ClinicManagementSystem.Dao.DoctorAppointmentScheduleDao.DoctorAppointmentScheduleDaoIMPL
+class com.ClinicManagementSystem.Dao.DoctorDao.DoctorDaoIMPL
+class com.ClinicManagementSystem.Dao.PatientDao.PatientDaoIMPL
+class com.ClinicManagementSystem.Model.AppointmentDto.AppointmentDto
+class com.ClinicManagementSystem.Model.DoctorAppointmentScheduleDto.DoctorAppointmentScheduleDto
+class com.ClinicManagementSystem.Model.DoctorDto.DoctorDto
+class com.ClinicManagementSystem.Model.LoginDto.LoginDto
+class com.ClinicManagementSystem.Model.PatientDto.PatientDto
+class com.ClinicManagementSystem.Model.ReportDto.ReportDto
+class com.ClinicManagementSystem.Service.AdminService.AdminServiceIMPL
+class com.ClinicManagementSystem.Service.AppointmentService.AppointmentServiceIMPL
+class com.ClinicManagementSystem.Service.DoctorAppointmentScheduleService.DoctorAppointmentScheduleServiceIMPL
+class com.ClinicManagementSystem.Service.DoctorService.DoctorServiceIMPL
+class com.ClinicManagementSystem.Service.PatientService.PatientServiceIMPL
+class com.ClinicManagementSystem.Util.DbUtil
+class com.ClinicManagementSystem.Util.PageURL
+class com.ClinicManagementSystem.Util.QueryUtil
+class java.io.IOException
+class java.sql.Connection
+class java.sql.DriverManager
+class java.sql.PreparedStatement
+class java.sql.ResultSet
+class java.sql.SQLException
+class java.sql.Time
+class java.text.ParseException
+class java.text.SimpleDateFormat
+class java.util.ArrayList
+class java.util.Date
+class java.util.List
+class java.util.logging.Level
+class java.util.logging.Logger
+class javax.servlet.RequestDispatcher
+class javax.servlet.ServletException
+class javax.servlet.http.HttpServlet
+class javax.servlet.http.HttpServletRequest
+class javax.servlet.http.HttpServletResponse
+class javax.servlet.http.HttpSession
+interface com.ClinicManagementSystem.Dao.AdminDao.AdminDao
+interface com.ClinicManagementSystem.Dao.AppointmentDao.AppointmentDao
+interface com.ClinicManagementSystem.Dao.DoctorAppointmentScheduleDao.DoctorAppointmentScheduleDao
+interface com.ClinicManagementSystem.Dao.DoctorDao.DoctorDao
+interface com.ClinicManagementSystem.Dao.PatientDao.PatientDao
+interface com.ClinicManagementSystem.Service.AdminService.AdminService
+interface com.ClinicManagementSystem.Service.AppointmentService.AppointmentService
+interface com.ClinicManagementSystem.Service.DoctorAppointmentScheduleService.DoctorAppointmentScheduleService
+interface com.ClinicManagementSystem.Service.DoctorService.DoctorService
+interface com.ClinicManagementSystem.Service.PatientService.PatientService
+com.ClinicManagementSystem.Controller.AdminController.AdminController ..> java.lang.Override
+com.ClinicManagementSystem.Controller.AdminController.AdminController ..> javax.servlet.annotation.WebServlet
+com.ClinicManagementSystem.Controller.AdminController.AdminController ..> com.ClinicManagementSystem.Model.ReportDto.ReportDto
+com.ClinicManagementSystem.Controller.AdminController.AdminController ..> com.ClinicManagementSystem.Service.AdminService.AdminServiceIMPL
+com.ClinicManagementSystem.Controller.AdminController.AdminController ..> com.ClinicManagementSystem.Service.AppointmentService.AppointmentServiceIMPL
+com.ClinicManagementSystem.Controller.AdminController.AdminController ..> com.ClinicManagementSystem.Service.DoctorService.DoctorServiceIMPL
+com.ClinicManagementSystem.Controller.AdminController.AdminController ..> com.ClinicManagementSystem.Service.PatientService.PatientServiceIMPL
+com.ClinicManagementSystem.Controller.AdminController.AdminController ..> com.ClinicManagementSystem.Util.PageURL
+com.ClinicManagementSystem.Controller.AdminController.AdminController ..> java.io.IOException
+com.ClinicManagementSystem.Controller.AdminController.AdminController ..> javax.servlet.RequestDispatcher
+com.ClinicManagementSystem.Controller.AdminController.AdminController ..> javax.servlet.ServletException
+com.ClinicManagementSystem.Controller.AdminController.AdminController --|> javax.servlet.http.HttpServlet
+com.ClinicManagementSystem.Controller.AdminController.AdminController ..> javax.servlet.http.HttpServletRequest
+com.ClinicManagementSystem.Controller.AdminController.AdminController ..> javax.servlet.http.HttpServletResponse
+com.ClinicManagementSystem.Controller.AdminController.AdminController ..> com.ClinicManagementSystem.Service.AdminService.AdminService
+com.ClinicManagementSystem.Controller.AdminController.AdminController ..> com.ClinicManagementSystem.Service.AppointmentService.AppointmentService
+com.ClinicManagementSystem.Controller.AdminController.AdminController ..> com.ClinicManagementSystem.Service.DoctorService.DoctorService
+com.ClinicManagementSystem.Controller.AdminController.AdminController ..> com.ClinicManagementSystem.Service.PatientService.PatientService
+com.ClinicManagementSystem.Controller.AppointmentController.AppointmentController ..> java.lang.Override
+com.ClinicManagementSystem.Controller.AppointmentController.AppointmentController ..> javax.servlet.annotation.WebServlet
+com.ClinicManagementSystem.Controller.AppointmentController.AppointmentController ..> com.ClinicManagementSystem.Model.AppointmentDto.AppointmentDto
+com.ClinicManagementSystem.Controller.AppointmentController.AppointmentController ..> com.ClinicManagementSystem.Service.AppointmentService.AppointmentServiceIMPL
+com.ClinicManagementSystem.Controller.AppointmentController.AppointmentController ..> com.ClinicManagementSystem.Service.DoctorAppointmentScheduleService.DoctorAppointmentScheduleServiceIMPL
+com.ClinicManagementSystem.Controller.AppointmentController.AppointmentController ..> com.ClinicManagementSystem.Service.DoctorService.DoctorServiceIMPL
+com.ClinicManagementSystem.Controller.AppointmentController.AppointmentController ..> com.ClinicManagementSystem.Util.PageURL
+com.ClinicManagementSystem.Controller.AppointmentController.AppointmentController ..> java.io.IOException
+com.ClinicManagementSystem.Controller.AppointmentController.AppointmentController ..> java.text.ParseException
+com.ClinicManagementSystem.Controller.AppointmentController.AppointmentController ..> java.text.SimpleDateFormat
+com.ClinicManagementSystem.Controller.AppointmentController.AppointmentController ..> java.util.logging.Level
+com.ClinicManagementSystem.Controller.AppointmentController.AppointmentController ..> java.util.logging.Logger
+com.ClinicManagementSystem.Controller.AppointmentController.AppointmentController ..> javax.servlet.RequestDispatcher
+com.ClinicManagementSystem.Controller.AppointmentController.AppointmentController ..> javax.servlet.ServletException
+com.ClinicManagementSystem.Controller.AppointmentController.AppointmentController --|> javax.servlet.http.HttpServlet
+com.ClinicManagementSystem.Controller.AppointmentController.AppointmentController ..> javax.servlet.http.HttpServletRequest
+com.ClinicManagementSystem.Controller.AppointmentController.AppointmentController ..> javax.servlet.http.HttpServletResponse
+com.ClinicManagementSystem.Controller.AppointmentController.AppointmentController ..> com.ClinicManagementSystem.Service.AppointmentService.AppointmentService
+com.ClinicManagementSystem.Controller.AppointmentController.AppointmentController ..> com.ClinicManagementSystem.Service.DoctorAppointmentScheduleService.DoctorAppointmentScheduleService
+com.ClinicManagementSystem.Controller.AppointmentController.AppointmentController ..> com.ClinicManagementSystem.Service.DoctorService.DoctorService
+com.ClinicManagementSystem.Controller.DoctorAppointmentScheduleController.DoctorAppointmentScheduleController ..> java.lang.Override
+com.ClinicManagementSystem.Controller.DoctorAppointmentScheduleController.DoctorAppointmentScheduleController ..> javax.servlet.annotation.WebServlet
+com.ClinicManagementSystem.Controller.DoctorAppointmentScheduleController.DoctorAppointmentScheduleController ..> com.ClinicManagementSystem.Controller.AppointmentController.AppointmentController
+com.ClinicManagementSystem.Controller.DoctorAppointmentScheduleController.DoctorAppointmentScheduleController ..> com.ClinicManagementSystem.Model.DoctorAppointmentScheduleDto.DoctorAppointmentScheduleDto
+com.ClinicManagementSystem.Controller.DoctorAppointmentScheduleController.DoctorAppointmentScheduleController ..> com.ClinicManagementSystem.Service.DoctorAppointmentScheduleService.DoctorAppointmentScheduleServiceIMPL
+com.ClinicManagementSystem.Controller.DoctorAppointmentScheduleController.DoctorAppointmentScheduleController ..> com.ClinicManagementSystem.Util.PageURL
+com.ClinicManagementSystem.Controller.DoctorAppointmentScheduleController.DoctorAppointmentScheduleController ..> java.io.IOException
+com.ClinicManagementSystem.Controller.DoctorAppointmentScheduleController.DoctorAppointmentScheduleController ..> java.text.ParseException
+com.ClinicManagementSystem.Controller.DoctorAppointmentScheduleController.DoctorAppointmentScheduleController ..> java.text.SimpleDateFormat
+com.ClinicManagementSystem.Controller.DoctorAppointmentScheduleController.DoctorAppointmentScheduleController ..> java.util.logging.Level
+com.ClinicManagementSystem.Controller.DoctorAppointmentScheduleController.DoctorAppointmentScheduleController ..> java.util.logging.Logger
+com.ClinicManagementSystem.Controller.DoctorAppointmentScheduleController.DoctorAppointmentScheduleController ..> javax.servlet.RequestDispatcher
+com.ClinicManagementSystem.Controller.DoctorAppointmentScheduleController.DoctorAppointmentScheduleController ..> javax.servlet.ServletException
+com.ClinicManagementSystem.Controller.DoctorAppointmentScheduleController.DoctorAppointmentScheduleController --|> javax.servlet.http.HttpServlet
+com.ClinicManagementSystem.Controller.DoctorAppointmentScheduleController.DoctorAppointmentScheduleController ..> javax.servlet.http.HttpServletRequest
+com.ClinicManagementSystem.Controller.DoctorAppointmentScheduleController.DoctorAppointmentScheduleController ..> javax.servlet.http.HttpServletResponse
+com.ClinicManagementSystem.Controller.DoctorAppointmentScheduleController.DoctorAppointmentScheduleController ..> com.ClinicManagementSystem.Service.DoctorAppointmentScheduleService.DoctorAppointmentScheduleService
+com.ClinicManagementSystem.Controller.DoctorController.DoctorController ..> java.lang.Override
+com.ClinicManagementSystem.Controller.DoctorController.DoctorController ..> javax.servlet.annotation.WebServlet
+com.ClinicManagementSystem.Controller.DoctorController.DoctorController ..> com.ClinicManagementSystem.Model.DoctorDto.DoctorDto
+com.ClinicManagementSystem.Controller.DoctorController.DoctorController ..> com.ClinicManagementSystem.Service.DoctorService.DoctorServiceIMPL
+com.ClinicManagementSystem.Controller.DoctorController.DoctorController ..> java.io.IOException
+com.ClinicManagementSystem.Controller.DoctorController.DoctorController ..> javax.servlet.RequestDispatcher
+com.ClinicManagementSystem.Controller.DoctorController.DoctorController ..> javax.servlet.ServletException
+com.ClinicManagementSystem.Controller.DoctorController.DoctorController --|> javax.servlet.http.HttpServlet
+com.ClinicManagementSystem.Controller.DoctorController.DoctorController ..> javax.servlet.http.HttpServletRequest
+com.ClinicManagementSystem.Controller.DoctorController.DoctorController ..> javax.servlet.http.HttpServletResponse
+com.ClinicManagementSystem.Controller.DoctorController.DoctorController ..> com.ClinicManagementSystem.Service.DoctorService.DoctorService
+com.ClinicManagementSystem.Controller.HomeController.HomeController ..> java.lang.Override
+com.ClinicManagementSystem.Controller.HomeController.HomeController ..> javax.servlet.annotation.WebServlet
+com.ClinicManagementSystem.Controller.HomeController.HomeController ..> com.ClinicManagementSystem.Service.DoctorService.DoctorServiceIMPL
+com.ClinicManagementSystem.Controller.HomeController.HomeController ..> com.ClinicManagementSystem.Service.PatientService.PatientServiceIMPL
+com.ClinicManagementSystem.Controller.HomeController.HomeController ..> com.ClinicManagementSystem.Util.PageURL
+com.ClinicManagementSystem.Controller.HomeController.HomeController ..> java.io.IOException
+com.ClinicManagementSystem.Controller.HomeController.HomeController ..> javax.servlet.RequestDispatcher
+com.ClinicManagementSystem.Controller.HomeController.HomeController ..> javax.servlet.ServletException
+com.ClinicManagementSystem.Controller.HomeController.HomeController --|> javax.servlet.http.HttpServlet
+com.ClinicManagementSystem.Controller.HomeController.HomeController ..> javax.servlet.http.HttpServletRequest
+com.ClinicManagementSystem.Controller.HomeController.HomeController ..> javax.servlet.http.HttpServletResponse
+com.ClinicManagementSystem.Controller.HomeController.HomeController ..> com.ClinicManagementSystem.Service.DoctorService.DoctorService
+com.ClinicManagementSystem.Controller.HomeController.HomeController ..> com.ClinicManagementSystem.Service.PatientService.PatientService
+com.ClinicManagementSystem.Controller.LoginController.LoginController ..> java.lang.Override
+com.ClinicManagementSystem.Controller.LoginController.LoginController ..> javax.servlet.annotation.WebServlet
+com.ClinicManagementSystem.Controller.LoginController.LoginController ..> com.ClinicManagementSystem.Model.LoginDto.LoginDto
+com.ClinicManagementSystem.Controller.LoginController.LoginController ..> com.ClinicManagementSystem.Service.AdminService.AdminServiceIMPL
+com.ClinicManagementSystem.Controller.LoginController.LoginController ..> com.ClinicManagementSystem.Service.DoctorService.DoctorServiceIMPL
+com.ClinicManagementSystem.Controller.LoginController.LoginController ..> com.ClinicManagementSystem.Service.PatientService.PatientServiceIMPL
+com.ClinicManagementSystem.Controller.LoginController.LoginController ..> com.ClinicManagementSystem.Util.PageURL
+com.ClinicManagementSystem.Controller.LoginController.LoginController ..> java.io.IOException
+com.ClinicManagementSystem.Controller.LoginController.LoginController ..> javax.servlet.RequestDispatcher
+com.ClinicManagementSystem.Controller.LoginController.LoginController ..> javax.servlet.ServletException
+com.ClinicManagementSystem.Controller.LoginController.LoginController --|> javax.servlet.http.HttpServlet
+com.ClinicManagementSystem.Controller.LoginController.LoginController ..> javax.servlet.http.HttpServletRequest
+com.ClinicManagementSystem.Controller.LoginController.LoginController ..> javax.servlet.http.HttpServletResponse
+com.ClinicManagementSystem.Controller.LoginController.LoginController ..> javax.servlet.http.HttpSession
+com.ClinicManagementSystem.Controller.LoginController.LoginController ..> com.ClinicManagementSystem.Service.AdminService.AdminService
+com.ClinicManagementSystem.Controller.LoginController.LoginController ..> com.ClinicManagementSystem.Service.DoctorService.DoctorService
+com.ClinicManagementSystem.Controller.LoginController.LoginController ..> com.ClinicManagementSystem.Service.PatientService.PatientService
+com.ClinicManagementSystem.Controller.PatientController.PatientController ..> java.lang.Override
+com.ClinicManagementSystem.Controller.PatientController.PatientController ..> javax.servlet.annotation.WebServlet
+com.ClinicManagementSystem.Controller.PatientController.PatientController ..> com.ClinicManagementSystem.Model.PatientDto.PatientDto
+com.ClinicManagementSystem.Controller.PatientController.PatientController ..> com.ClinicManagementSystem.Service.PatientService.PatientServiceIMPL
+com.ClinicManagementSystem.Controller.PatientController.PatientController ..> com.ClinicManagementSystem.Util.PageURL
+com.ClinicManagementSystem.Controller.PatientController.PatientController ..> java.io.IOException
+com.ClinicManagementSystem.Controller.PatientController.PatientController ..> java.util.ArrayList
+com.ClinicManagementSystem.Controller.PatientController.PatientController ..> java.util.List
+com.ClinicManagementSystem.Controller.PatientController.PatientController ..> javax.servlet.RequestDispatcher
+com.ClinicManagementSystem.Controller.PatientController.PatientController ..> javax.servlet.ServletException
+com.ClinicManagementSystem.Controller.PatientController.PatientController --|> javax.servlet.http.HttpServlet
+com.ClinicManagementSystem.Controller.PatientController.PatientController ..> javax.servlet.http.HttpServletRequest
+com.ClinicManagementSystem.Controller.PatientController.PatientController ..> javax.servlet.http.HttpServletResponse
+com.ClinicManagementSystem.Controller.PatientController.PatientController ..> javax.servlet.http.HttpSession
+com.ClinicManagementSystem.Controller.PatientController.PatientController ..> com.ClinicManagementSystem.Service.PatientService.PatientService
+com.ClinicManagementSystem.Dao.AdminDao.AdminDaoIMPL ..> java.lang.Override
+com.ClinicManagementSystem.Dao.AdminDao.AdminDaoIMPL ..> com.ClinicManagementSystem.Model.DoctorDto.DoctorDto
+com.ClinicManagementSystem.Dao.AdminDao.AdminDaoIMPL ..> com.ClinicManagementSystem.Model.ReportDto.ReportDto
+com.ClinicManagementSystem.Dao.AdminDao.AdminDaoIMPL ..> com.ClinicManagementSystem.Util.DbUtil
+com.ClinicManagementSystem.Dao.AdminDao.AdminDaoIMPL ..> com.ClinicManagementSystem.Util.QueryUtil
+com.ClinicManagementSystem.Dao.AdminDao.AdminDaoIMPL ..> java.sql.PreparedStatement
+com.ClinicManagementSystem.Dao.AdminDao.AdminDaoIMPL ..> java.sql.ResultSet
+com.ClinicManagementSystem.Dao.AdminDao.AdminDaoIMPL ..> java.sql.SQLException
+com.ClinicManagementSystem.Dao.AdminDao.AdminDaoIMPL ..> java.util.logging.Level
+com.ClinicManagementSystem.Dao.AdminDao.AdminDaoIMPL ..> java.util.logging.Logger
+com.ClinicManagementSystem.Dao.AdminDao.AdminDaoIMPL --|> com.ClinicManagementSystem.Dao.AdminDao.AdminDao
+com.ClinicManagementSystem.Dao.AppointmentDao.ApointmentDaoIMPL ..> java.lang.Override
+com.ClinicManagementSystem.Dao.AppointmentDao.ApointmentDaoIMPL ..> com.ClinicManagementSystem.Model.AppointmentDto.AppointmentDto
+com.ClinicManagementSystem.Dao.AppointmentDao.ApointmentDaoIMPL ..> com.ClinicManagementSystem.Util.DbUtil
+com.ClinicManagementSystem.Dao.AppointmentDao.ApointmentDaoIMPL ..> com.ClinicManagementSystem.Util.QueryUtil
+com.ClinicManagementSystem.Dao.AppointmentDao.ApointmentDaoIMPL ..> java.sql.PreparedStatement
+com.ClinicManagementSystem.Dao.AppointmentDao.ApointmentDaoIMPL ..> java.sql.ResultSet
+com.ClinicManagementSystem.Dao.AppointmentDao.ApointmentDaoIMPL ..> java.sql.SQLException
+com.ClinicManagementSystem.Dao.AppointmentDao.ApointmentDaoIMPL ..> java.util.logging.Level
+com.ClinicManagementSystem.Dao.AppointmentDao.ApointmentDaoIMPL ..> java.util.logging.Logger
+com.ClinicManagementSystem.Dao.AppointmentDao.ApointmentDaoIMPL --|> com.ClinicManagementSystem.Dao.AppointmentDao.AppointmentDao
+com.ClinicManagementSystem.Dao.DoctorAppointmentScheduleDao.DoctorAppointmentScheduleDaoIMPL ..> java.lang.Override
+com.ClinicManagementSystem.Dao.DoctorAppointmentScheduleDao.DoctorAppointmentScheduleDaoIMPL ..> com.ClinicManagementSystem.Model.DoctorAppointmentScheduleDto.DoctorAppointmentScheduleDto
+com.ClinicManagementSystem.Dao.DoctorAppointmentScheduleDao.DoctorAppointmentScheduleDaoIMPL ..> com.ClinicManagementSystem.Util.DbUtil
+com.ClinicManagementSystem.Dao.DoctorAppointmentScheduleDao.DoctorAppointmentScheduleDaoIMPL ..> com.ClinicManagementSystem.Util.QueryUtil
+com.ClinicManagementSystem.Dao.DoctorAppointmentScheduleDao.DoctorAppointmentScheduleDaoIMPL ..> java.sql.PreparedStatement
+com.ClinicManagementSystem.Dao.DoctorAppointmentScheduleDao.DoctorAppointmentScheduleDaoIMPL ..> java.sql.ResultSet
+com.ClinicManagementSystem.Dao.DoctorAppointmentScheduleDao.DoctorAppointmentScheduleDaoIMPL ..> java.sql.SQLException
+com.ClinicManagementSystem.Dao.DoctorAppointmentScheduleDao.DoctorAppointmentScheduleDaoIMPL ..> java.util.Date
+com.ClinicManagementSystem.Dao.DoctorAppointmentScheduleDao.DoctorAppointmentScheduleDaoIMPL ..> java.util.logging.Level
+com.ClinicManagementSystem.Dao.DoctorAppointmentScheduleDao.DoctorAppointmentScheduleDaoIMPL ..> java.util.logging.Logger
+com.ClinicManagementSystem.Dao.DoctorAppointmentScheduleDao.DoctorAppointmentScheduleDaoIMPL --|> com.ClinicManagementSystem.Dao.DoctorAppointmentScheduleDao.DoctorAppointmentScheduleDao
+com.ClinicManagementSystem.Dao.DoctorDao.DoctorDaoIMPL ..> java.lang.Override
+com.ClinicManagementSystem.Dao.DoctorDao.DoctorDaoIMPL ..> com.ClinicManagementSystem.Model.AppointmentDto.AppointmentDto
+com.ClinicManagementSystem.Dao.DoctorDao.DoctorDaoIMPL ..> com.ClinicManagementSystem.Model.DoctorDto.DoctorDto
+com.ClinicManagementSystem.Dao.DoctorDao.DoctorDaoIMPL ..> com.ClinicManagementSystem.Util.DbUtil
+com.ClinicManagementSystem.Dao.DoctorDao.DoctorDaoIMPL ..> com.ClinicManagementSystem.Util.QueryUtil
+com.ClinicManagementSystem.Dao.DoctorDao.DoctorDaoIMPL ..> java.sql.PreparedStatement
+com.ClinicManagementSystem.Dao.DoctorDao.DoctorDaoIMPL ..> java.sql.ResultSet
+com.ClinicManagementSystem.Dao.DoctorDao.DoctorDaoIMPL ..> java.sql.SQLException
+com.ClinicManagementSystem.Dao.DoctorDao.DoctorDaoIMPL ..> java.util.ArrayList
+com.ClinicManagementSystem.Dao.DoctorDao.DoctorDaoIMPL ..> java.util.List
+com.ClinicManagementSystem.Dao.DoctorDao.DoctorDaoIMPL ..> java.util.logging.Level
+com.ClinicManagementSystem.Dao.DoctorDao.DoctorDaoIMPL ..> java.util.logging.Logger
+com.ClinicManagementSystem.Dao.DoctorDao.DoctorDaoIMPL --|> com.ClinicManagementSystem.Dao.DoctorDao.DoctorDao
+com.ClinicManagementSystem.Dao.PatientDao.PatientDaoIMPL ..> java.lang.Override
+com.ClinicManagementSystem.Dao.PatientDao.PatientDaoIMPL ..> com.ClinicManagementSystem.Model.PatientDto.PatientDto
+com.ClinicManagementSystem.Dao.PatientDao.PatientDaoIMPL ..> com.ClinicManagementSystem.Model.ReportDto.ReportDto
+com.ClinicManagementSystem.Dao.PatientDao.PatientDaoIMPL ..> com.ClinicManagementSystem.Util.DbUtil
+com.ClinicManagementSystem.Dao.PatientDao.PatientDaoIMPL ..> com.ClinicManagementSystem.Util.QueryUtil
+com.ClinicManagementSystem.Dao.PatientDao.PatientDaoIMPL ..> java.sql.PreparedStatement
+com.ClinicManagementSystem.Dao.PatientDao.PatientDaoIMPL ..> java.sql.ResultSet
+com.ClinicManagementSystem.Dao.PatientDao.PatientDaoIMPL ..> java.sql.SQLException
+com.ClinicManagementSystem.Dao.PatientDao.PatientDaoIMPL ..> java.util.ArrayList
+com.ClinicManagementSystem.Dao.PatientDao.PatientDaoIMPL ..> java.util.List
+com.ClinicManagementSystem.Dao.PatientDao.PatientDaoIMPL ..> java.util.logging.Level
+com.ClinicManagementSystem.Dao.PatientDao.PatientDaoIMPL ..> java.util.logging.Logger
+com.ClinicManagementSystem.Dao.PatientDao.PatientDaoIMPL --|> com.ClinicManagementSystem.Dao.PatientDao.PatientDao
+com.ClinicManagementSystem.Model.AppointmentDto.AppointmentDto ..> java.sql.Time
+com.ClinicManagementSystem.Model.AppointmentDto.AppointmentDto ..> java.util.Date
+com.ClinicManagementSystem.Model.DoctorAppointmentScheduleDto.DoctorAppointmentScheduleDto ..> java.util.Date
+com.ClinicManagementSystem.Service.AdminService.AdminServiceIMPL ..> java.lang.Override
+com.ClinicManagementSystem.Service.AdminService.AdminServiceIMPL ..> com.ClinicManagementSystem.Dao.AdminDao.AdminDaoIMPL
+com.ClinicManagementSystem.Service.AdminService.AdminServiceIMPL ..> com.ClinicManagementSystem.Model.DoctorDto.DoctorDto
+com.ClinicManagementSystem.Service.AdminService.AdminServiceIMPL ..> com.ClinicManagementSystem.Model.ReportDto.ReportDto
+com.ClinicManagementSystem.Service.AdminService.AdminServiceIMPL ..> com.ClinicManagementSystem.Dao.AdminDao.AdminDao
+com.ClinicManagementSystem.Service.AdminService.AdminServiceIMPL --|> com.ClinicManagementSystem.Service.AdminService.AdminService
+com.ClinicManagementSystem.Service.AppointmentService.AppointmentServiceIMPL ..> java.lang.Override
+com.ClinicManagementSystem.Service.AppointmentService.AppointmentServiceIMPL ..> com.ClinicManagementSystem.Dao.AppointmentDao.ApointmentDaoIMPL
+com.ClinicManagementSystem.Service.AppointmentService.AppointmentServiceIMPL ..> com.ClinicManagementSystem.Model.AppointmentDto.AppointmentDto
+com.ClinicManagementSystem.Service.AppointmentService.AppointmentServiceIMPL ..> com.ClinicManagementSystem.Dao.AppointmentDao.AppointmentDao
+com.ClinicManagementSystem.Service.AppointmentService.AppointmentServiceIMPL --|> com.ClinicManagementSystem.Service.AppointmentService.AppointmentService
+com.ClinicManagementSystem.Service.DoctorAppointmentScheduleService.DoctorAppointmentScheduleServiceIMPL ..> java.lang.Override
+com.ClinicManagementSystem.Service.DoctorAppointmentScheduleService.DoctorAppointmentScheduleServiceIMPL ..> com.ClinicManagementSystem.Dao.DoctorAppointmentScheduleDao.DoctorAppointmentScheduleDaoIMPL
+com.ClinicManagementSystem.Service.DoctorAppointmentScheduleService.DoctorAppointmentScheduleServiceIMPL ..> com.ClinicManagementSystem.Model.DoctorAppointmentScheduleDto.DoctorAppointmentScheduleDto
+com.ClinicManagementSystem.Service.DoctorAppointmentScheduleService.DoctorAppointmentScheduleServiceIMPL ..> java.util.Date
+com.ClinicManagementSystem.Service.DoctorAppointmentScheduleService.DoctorAppointmentScheduleServiceIMPL ..> com.ClinicManagementSystem.Dao.DoctorAppointmentScheduleDao.DoctorAppointmentScheduleDao
+com.ClinicManagementSystem.Service.DoctorAppointmentScheduleService.DoctorAppointmentScheduleServiceIMPL --|> com.ClinicManagementSystem.Service.DoctorAppointmentScheduleService.DoctorAppointmentScheduleService
+com.ClinicManagementSystem.Service.DoctorService.DoctorServiceIMPL ..> java.lang.Override
+com.ClinicManagementSystem.Service.DoctorService.DoctorServiceIMPL ..> com.ClinicManagementSystem.Dao.DoctorDao.DoctorDaoIMPL
+com.ClinicManagementSystem.Service.DoctorService.DoctorServiceIMPL ..> com.ClinicManagementSystem.Model.AppointmentDto.AppointmentDto
+com.ClinicManagementSystem.Service.DoctorService.DoctorServiceIMPL ..> com.ClinicManagementSystem.Model.DoctorDto.DoctorDto
+com.ClinicManagementSystem.Service.DoctorService.DoctorServiceIMPL ..> java.util.List
+com.ClinicManagementSystem.Service.DoctorService.DoctorServiceIMPL ..> com.ClinicManagementSystem.Dao.DoctorDao.DoctorDao
+com.ClinicManagementSystem.Service.DoctorService.DoctorServiceIMPL --|> com.ClinicManagementSystem.Service.DoctorService.DoctorService
+com.ClinicManagementSystem.Service.PatientService.PatientServiceIMPL ..> java.lang.Override
+com.ClinicManagementSystem.Service.PatientService.PatientServiceIMPL ..> com.ClinicManagementSystem.Dao.PatientDao.PatientDaoIMPL
+com.ClinicManagementSystem.Service.PatientService.PatientServiceIMPL ..> com.ClinicManagementSystem.Model.PatientDto.PatientDto
+com.ClinicManagementSystem.Service.PatientService.PatientServiceIMPL ..> com.ClinicManagementSystem.Model.ReportDto.ReportDto
+com.ClinicManagementSystem.Service.PatientService.PatientServiceIMPL ..> java.util.List
+com.ClinicManagementSystem.Service.PatientService.PatientServiceIMPL ..> com.ClinicManagementSystem.Dao.PatientDao.PatientDao
+com.ClinicManagementSystem.Service.PatientService.PatientServiceIMPL --|> com.ClinicManagementSystem.Service.PatientService.PatientService
+com.ClinicManagementSystem.Util.DbUtil ..> java.sql.Connection
+com.ClinicManagementSystem.Util.DbUtil ..> java.sql.DriverManager
+com.ClinicManagementSystem.Util.DbUtil ..> java.sql.SQLException
+com.ClinicManagementSystem.Dao.AdminDao.AdminDao ..> com.ClinicManagementSystem.Model.DoctorDto.DoctorDto
+com.ClinicManagementSystem.Dao.AdminDao.AdminDao ..> com.ClinicManagementSystem.Model.ReportDto.ReportDto
+com.ClinicManagementSystem.Dao.AppointmentDao.AppointmentDao ..> com.ClinicManagementSystem.Model.AppointmentDto.AppointmentDto
+com.ClinicManagementSystem.Dao.DoctorAppointmentScheduleDao.DoctorAppointmentScheduleDao ..> com.ClinicManagementSystem.Model.DoctorAppointmentScheduleDto.DoctorAppointmentScheduleDto
+com.ClinicManagementSystem.Dao.DoctorAppointmentScheduleDao.DoctorAppointmentScheduleDao ..> java.util.Date
+com.ClinicManagementSystem.Dao.DoctorDao.DoctorDao ..> com.ClinicManagementSystem.Model.AppointmentDto.AppointmentDto
+com.ClinicManagementSystem.Dao.DoctorDao.DoctorDao ..> com.ClinicManagementSystem.Model.DoctorDto.DoctorDto
+com.ClinicManagementSystem.Dao.DoctorDao.DoctorDao ..> java.util.List
+com.ClinicManagementSystem.Dao.PatientDao.PatientDao ..> com.ClinicManagementSystem.Model.PatientDto.PatientDto
+com.ClinicManagementSystem.Dao.PatientDao.PatientDao ..> com.ClinicManagementSystem.Model.ReportDto.ReportDto
+com.ClinicManagementSystem.Dao.PatientDao.PatientDao ..> java.util.List
+com.ClinicManagementSystem.Service.AdminService.AdminService ..> com.ClinicManagementSystem.Model.DoctorDto.DoctorDto
+com.ClinicManagementSystem.Service.AdminService.AdminService ..> com.ClinicManagementSystem.Model.ReportDto.ReportDto
+com.ClinicManagementSystem.Service.AppointmentService.AppointmentService ..> com.ClinicManagementSystem.Model.AppointmentDto.AppointmentDto
+com.ClinicManagementSystem.Service.DoctorAppointmentScheduleService.DoctorAppointmentScheduleService ..> com.ClinicManagementSystem.Model.DoctorAppointmentScheduleDto.DoctorAppointmentScheduleDto
+com.ClinicManagementSystem.Service.DoctorAppointmentScheduleService.DoctorAppointmentScheduleService ..> java.util.Date
+com.ClinicManagementSystem.Service.DoctorService.DoctorService ..> com.ClinicManagementSystem.Model.AppointmentDto.AppointmentDto
+com.ClinicManagementSystem.Service.DoctorService.DoctorService ..> com.ClinicManagementSystem.Model.DoctorDto.DoctorDto
+com.ClinicManagementSystem.Service.DoctorService.DoctorService ..> java.util.List
+com.ClinicManagementSystem.Service.PatientService.PatientService ..> com.ClinicManagementSystem.Model.PatientDto.PatientDto
+com.ClinicManagementSystem.Service.PatientService.PatientService ..> com.ClinicManagementSystem.Model.ReportDto.ReportDto
+com.ClinicManagementSystem.Service.PatientService.PatientService ..> java.util.List
+@enduml

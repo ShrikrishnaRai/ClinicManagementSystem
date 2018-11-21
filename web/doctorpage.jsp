@@ -14,6 +14,12 @@
         <title>My Appointment</title>
     </head>
     <body>
+
+        <c:if test="${!empty message}">
+            <c:out value="${message}"/>
+        </c:if>
+        <br><br>
+        <label>Your Appointment Schedule</label><br><br>
         <c:if test="${!empty appointment}">
             <table border="1">
                 <thead>
@@ -25,10 +31,11 @@
                         <th>Patient Problem</th>
                         <th>Appointment Date</th>
                         <th>Appointment Time</th>
+                        <th>Maintain</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <c:forEach items="${doctor}" var="doctor">
+                    <c:forEach items="${appointment}" var="appointment">
                         <tr>
                             <td>
                                 <c:out value="${appointment.id}"></c:out>
@@ -51,11 +58,16 @@
                                 <td>
                                 <c:out value="${appointment.appointmentTime}"></c:out>
                                 </td>
-                            </tr>
+                                <td>
+                                    <a href="DoctorController?actions=delete&id=<c:out value="${appointment.id}"/>">Delete</a>
+                            </td>
+                        </tr>
 
                     </c:forEach>
                 </tbody>
             </table>
+
         </c:if>
+        <a href="index.jsp">Log Out</a>
     </body>
 </html>

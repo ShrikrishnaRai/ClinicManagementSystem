@@ -5,6 +5,7 @@
  */
 package com.ClinicManagementSystem.Dao.AdminDao;
 
+import com.ClinicManagementSystem.Model.DoctorDto.DoctorDto;
 import com.ClinicManagementSystem.Model.ReportDto.ReportDto;
 
 /**
@@ -18,4 +19,6 @@ public interface AdminDao {
     public void deleteDoctor(int id);
 
     public void saveReport(ReportDto reportDto);
+    
+    public void updateDoctorInfo(DoctorDto doctorDto);
 }

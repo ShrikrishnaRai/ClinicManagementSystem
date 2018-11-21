@@ -16,8 +16,8 @@
         Save Doctor Info
         <form action="DoctorController" method="post">
             Firstname:<input type="text" name="firstname"><br><br>
-            Lastname:<input type="text" name="lastname"><br><br>
-            Email:<input type="email" name="email"><br><br>
+            Lastname:<input type="text" name="lastname" ><br><br>
+            Email:<input type="email" name="email" ><br><br>
             Specialization:<input type="text" name="specialization"><br><br>
             Password:<input type="password" name="password"><br><br>
             <input type="submit" value="submit">

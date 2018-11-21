@@ -24,6 +24,7 @@ import java.util.logging.Logger;
 public class DoctorDaoIMPL implements DoctorDao {
 
     PreparedStatement ps;
+    List<DoctorDto> doctorDtoList;
 
     @Override
     public void saveDoctorInfo(DoctorDto doctorDto) {
@@ -109,6 +110,43 @@ public class DoctorDaoIMPL implements DoctorDao {
 
         }
         return appointmentDtoList;
+    }
+
+    @Override
+    public DoctorDto getDoctorInfo(int id) {
+        DoctorDto doctorDto = new DoctorDto();
+        try {
+            ps = DbUtil.getConnection().prepareStatement(QueryUtil.CHECK_DOCTOR_ID);
+            ps.setInt(1, id);
+            ResultSet rs_Dco = ps.executeQuery();
+            while (rs_Dco.next()) {
+                doctorDto.setId(rs_Dco.getInt("id"));
+                doctorDto.setEmail(rs_Dco.getString("email"));
+                doctorDto.setFirstName(rs_Dco.getString("firstName"));
+                doctorDto.setLastName(rs_Dco.getString("lastName"));
+                doctorDto.setSpecialization(rs_Dco.getString("specialization"));
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DoctorDaoIMPL.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(DoctorDaoIMPL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return doctorDto;
+
+    }
+
+    @Override
+    public void deleteAppointment(int id) {
+        try {
+            ps = DbUtil.getConnection().prepareStatement(QueryUtil.DELETE_APPOINTMENT);
+            ps.setInt(1, id);
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(DoctorDaoIMPL.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(DoctorDaoIMPL.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }

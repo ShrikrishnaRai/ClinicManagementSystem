@@ -5,6 +5,7 @@
  */
 package com.ClinicManagementSystem.Service.AdminService;
 
+import com.ClinicManagementSystem.Model.DoctorDto.DoctorDto;
 import com.ClinicManagementSystem.Model.ReportDto.ReportDto;
 
 /**
@@ -16,6 +17,9 @@ public interface AdminService {
     public boolean login(String username, String password);
 
     public void deleteDoctor(int id);
-    
+
     public void saveReport(ReportDto reportDto);
+
+    public void updateDoctor(DoctorDto doctorDto);
+    
 }

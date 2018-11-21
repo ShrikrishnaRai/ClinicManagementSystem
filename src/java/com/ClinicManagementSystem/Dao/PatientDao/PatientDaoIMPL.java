@@ -5,10 +5,13 @@
  */
 package com.ClinicManagementSystem.Dao.PatientDao;
 
+import com.ClinicManagementSystem.Model.AppointmentDto.AppointmentDto;
 import com.ClinicManagementSystem.Util.DbUtil;
 import com.ClinicManagementSystem.Util.QueryUtil;
 import com.ClinicManagementSystem.Model.PatientDto.PatientDto;
 import com.ClinicManagementSystem.Model.ReportDto.ReportDto;
+import static com.ClinicManagementSystem.Util.QueryUtil.CHECK_APPOINTMENT_PATIENT;
+import static com.ClinicManagementSystem.Util.QueryUtil.DELETE_APPOINTMENT_PATIENT;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -84,12 +87,11 @@ public class PatientDaoIMPL implements PatientDao {
     }
 
     @Override
-    public List<ReportDto> getPatientReport(String patientFirstName, String patientLastName) {
+    public List<ReportDto> getPatientReport(String email) {
         List<ReportDto> reportDtoList = new ArrayList<>();
         try {
             ps = DbUtil.getConnection().prepareStatement(QueryUtil.CHECK_REPORT);
-            ps.setString(1, patientFirstName);
-            ps.setString(2, patientLastName);
+            ps.setString(1, email);
             ResultSet rs_Dco = ps.executeQuery();
             while (rs_Dco.next()) {
                 ReportDto reportDto = new ReportDto();
@@ -132,6 +134,46 @@ public class PatientDaoIMPL implements PatientDao {
             Logger.getLogger(PatientDaoIMPL.class.getName()).log(Level.SEVERE, null, ex);
         }
         return patientDtoList;
+    }
+
+    @Override
+    public List<AppointmentDto> checkAppointment(String email) {
+        List<AppointmentDto> appointmentDtoList = new ArrayList<>();
+        AppointmentDto appointmentDto = new AppointmentDto();
+        try {
+            ps = DbUtil.getConnection().prepareStatement(CHECK_APPOINTMENT_PATIENT);
+            ps.setString(1, email);
+            ResultSet rs_Dco = ps.executeQuery();
+            while (rs_Dco.next()) {
+                appointmentDto.setId(rs_Dco.getInt("id"));
+                appointmentDto.setAppointmentDate(rs_Dco.getDate("appointmentdate"));
+                appointmentDto.setAppointmentTime(rs_Dco.getString("appointmenttime"));
+                appointmentDto.setDoctorName(rs_Dco.getString("doctorname"));
+                appointmentDto.setDoctorLastName(rs_Dco.getString("doctorlastname"));
+                appointmentDto.setPatientName(rs_Dco.getString("patientname"));
+                appointmentDto.setPatientProblem(rs_Dco.getString("patientproblem"));
+                appointmentDto.setEmail(rs_Dco.getString("email"));
+                appointmentDtoList.add(appointmentDto);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(PatientDaoIMPL.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(PatientDaoIMPL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return appointmentDtoList;
+    }
+
+    @Override
+    public void deleteAppointment(int id) {
+        try {
+            ps = DbUtil.getConnection().prepareStatement(DELETE_APPOINTMENT_PATIENT);
+            ps.setInt(1, id);
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(PatientDaoIMPL.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(PatientDaoIMPL.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }

@@ -21,5 +21,7 @@ public class PageURL {
     public static final String DOCTORAPPOINTSCHEDULE_PAGE = "appointmentschedule.jsp";
     public static final String GENERATEREPORT_PAGE = "generateReport.jsp";
     public static final String PATIENT_PAGE = "patient.jsp";
-    public static final String DOCTOR_PAGE="doctorpage.jsp";
+    public static final String DOCTOR_PAGE = "doctorpage.jsp";
+    public static final String SIGNUP_DOCTOR_PAGE = "signupdoctor.jsp";
+    public static final String UPDATE_DOCTOR_PAGE = "updatedoctor.jsp";
 }

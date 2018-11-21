@@ -11,9 +11,42 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Report page</title>
     </head>
     <body>
+        Available Patient's List
+        <c:if test="${!empty patient}">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <c:forEach items="${patient}" var="patient">
+                        <tr>
+                            <td>
+                                <c:out value="${patient.id}"></c:out>
+                                </td>
+                                <td>
+                                <c:out value="${patient.firstName}"></c:out>
+                                </td>
+                                <td>
+                                <c:out value="${patient.lastName}"></c:out>
+                                </td>
+                                <td>
+                                <c:out value="${patient.email}"></c:out>
+                                </td>
+                            </tr>
+
+                    </c:forEach>
+                </tbody>
+            </table>
+        </c:if>
+        <br><br>
         Available Doctor's List
         <c:if test="${!empty doctor}">
             <table border="1">
@@ -51,42 +84,14 @@
             </table>
         </c:if>
         <br><br>
-        Available Patient List
-        <c:if test="${!empty patient}">
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>FirstName</th>
-                        <th>LastName</th>
-                        <th>Email</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <c:forEach items="${patient}" var="patient">
-                        <tr>
-                            <td>
-                                <c:out value="${patient.id}"></c:out>
-                                </td>
-                                <td>
-                                <c:out value="${patient.firstName}"></c:out>
-                                </td>
-                                <td>
-                                <c:out value="${patient.lastName}"></c:out>
-                                </td>
-                                <td>
-                                <c:out value="${patient.email}"></c:out>
-                                </td>
-                            </tr>
-                    </c:forEach>
-                </tbody>
-            </table>
-        </c:if>
+
+
         <br><br>
         Enter Patient Report
         <form action="AdminController" method="post">
             Patient First Name:<input type="text" name="patientfirstname"/><br><br>
             Patient Last Name:<input type="text" name="patientlastname"/><br><br>
+            Patient Email:<input type="email" name="email"/><br><br>
             Checked By<br><br>
             Doctor's First Name:<input type="text" name="doctorFirstName"/><br><br>
             Doctor's Last Name:<input type="text" name="doctorLastName"/><br><br>

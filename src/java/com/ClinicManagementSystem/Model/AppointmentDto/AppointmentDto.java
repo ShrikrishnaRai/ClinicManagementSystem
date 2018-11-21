@@ -21,6 +21,24 @@ public class AppointmentDto {
     private String appointmentTime;
     private String patientProblem;
     private String doctorLastName;
+    private String email;
+    private String patientEmail;
+
+    public String getPatientEmail() {
+        return patientEmail;
+    }
+
+    public void setPatientEmail(String patientEmail) {
+        this.patientEmail = patientEmail;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public String getDoctorLastName() {
         return doctorLastName;
@@ -69,8 +87,6 @@ public class AppointmentDto {
     public void setAppointmentTime(String appointmentTime) {
         this.appointmentTime = appointmentTime;
     }
-
-
 
     public String getPatientProblem() {
         return patientProblem;

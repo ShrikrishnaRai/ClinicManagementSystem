@@ -43,4 +43,14 @@ public class DoctorServiceIMPL implements DoctorService {
         return doctorDao_Ic.checkAppointment(email);
     }
 
+    @Override
+    public DoctorDto getDoctorInfo(int id) {
+        return doctorDao_Ic.getDoctorInfo(id);
+    }
+
+    @Override
+    public void deleteAppointment(int id) {
+        doctorDao_Ic.deleteAppointment(id);
+    }
+
 }

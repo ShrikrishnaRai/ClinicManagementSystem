@@ -1,26 +1,33 @@
-<%-- 
-    Document   : patientSignup
-    Created on : 24-Sep-2018, 13:11:34
-    Author     : cri_r
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="shortcut icon" type="image/x-icon" href="https://www.shareicon.net/download/2016/07/12/795016_medical_512x512.png" />
-        <title>JSP Page</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </head>
-    <body>
-        SignUp Patient
-        <br><br>
-        <form action="PatientController" method="post">
-            First Name:<input type="text" name="firstname"><br><br>
-            Last Name:<input type="text" name="lastname"><br><br>
-            Email:<input type="email" name="email"><br><br>
-            Password:<input type="password" name="password"><br><br>
-            <input type="submit" value="submit" name="action" ><br><br>
-        </form>
-    </body>
+
+    <body background="https://bogor.net/wp-content/uploads/2017/03/city-clinic-vl-9187.jpg">
+        <label >Create your patient account to get services provided by Clinic Management System</label>
+
+    <center>
+        <div style="background-color: graytext;box-shadow: 5px 10px;margin-right: 28%;margin-left: 30%">
+            Sign Up Patient<br><br>
+            Firstname<input class="input100" type="text" name="firstname" placeholder="Firstname"><br><br>
+            Lastname<input class="input100" type="text" name="lastname" placeholder="Lastname"><br><br>
+            Email<input class="input100" type="email" name="email" placeholder="Email"><br><br>
+            Password<input class="input100" type="password" name="password" placeholder="*************"><br><br>
+            <input type="submit" value="Sign Up"  name="action"/><br><br>
+            <a href="index.jsp" >
+                Sign in
+            </a>
+        </div>
+    </center>
+</form>
+</div>
+</div>
+</div>
+
+
+</body>
 </html>

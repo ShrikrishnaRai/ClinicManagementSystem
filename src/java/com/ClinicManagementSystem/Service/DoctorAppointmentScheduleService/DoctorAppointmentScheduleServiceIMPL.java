@@ -28,12 +28,6 @@ public class DoctorAppointmentScheduleServiceIMPL implements DoctorAppointmentSc
         doctorAppointmentScheduleDao_Ic.saveDoctorAppointmentSchedule(DoctorAppointmentSchedule);
     }
 
-    @Override
-    public boolean checkDoctorAvailability(String starttime, String endtime, Date date, String firstname, String lastname) {
-        if (doctorAppointmentScheduleDao_Ic.checkAvailability(starttime, endtime, date, firstname, lastname)) {
-            return true;
-        }
-        return false;
-    }
+
 
 }

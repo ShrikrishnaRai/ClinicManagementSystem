@@ -42,11 +42,7 @@ public class PatientController extends HttpServlet {
         if (v.equals("Check My Report")) {
             RequestDispatcher rd = req.getRequestDispatcher(PATIENT_PAGE);
             patientDtoList = patientService_Ic.getPatientDetail(session.getAttribute("userName").toString());
-            for (int i = 0; i <= patientDtoList.size(); i++) {
-                firstName = patientDtoList.get(i).getFirstName();
-                lastName = patientDtoList.get(i).getLastName();
-            }
-            req.setAttribute("patient", patientService_Ic.getPatientReport(firstName, lastName));
+            req.setAttribute("patient", patientDtoList);
             rd.forward(req, resp);
         }
         PatientDto patientDto_Ic = new PatientDto();

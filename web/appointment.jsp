@@ -18,56 +18,60 @@
     </head>
     <body>
         <div>
-            <c:if test="${!empty doctor}">
-                <table border="1" class="table">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Doctor's name</th>
-                            <th>Lastname</th>
-                            <th>Email</th>
-                            <th>Specialization</th>
-                            <th>Maintain</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <c:forEach items="${doctor}" var="doctor">
-                            <tr>
-                                <td>
-                                    <c:out value="${doctor.id}"></c:out>
-                                    </td>
-                                    <td>
-                                    <c:out value="${doctor.firstName}"></c:out>
-                                    </td>
-                                    <td>
-                                    <c:out value="${doctor.lastName}"></c:out>
-                                    </td>
-                                    <td>
-                                    <c:out value="${doctor.email}"></c:out>
-                                    </td>
-                                    <td>
-                                    <c:out value="${doctor.specialization}"></c:out>
-                                    </td>
-                                    <td>
-                                        <a href="AdminController?actions=delete&id=<c:out value="${doctor.id}"/>">Delete</a>
-                                    <a href="AdminController?actions=edit&id=<c:out value="${doctor.id}"/>">Edit</a>
-                                </td>
-                            </tr>
+            <center>
+                
 
-                        </c:forEach>
-                    </tbody>
-                </table>
-            </c:if>
+                Available Doctor's List
+                <c:if test="${!empty doctor}">
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Firstname</th>
+                                <th>Lastname</th>
+                                <th>Email</th>
+                                <th>Specialization</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <c:forEach items="${doctor}" var="doctor">
+                                <tr>
+                                    <td>
+                                        <c:out value="${doctor.id}"></c:out>
+                                        </td>
+                                        <td>
+                                        <c:out value="${doctor.firstName}"></c:out>
+                                        </td>
+                                        <td>
+                                        <c:out value="${doctor.lastName}"></c:out>
+                                        </td>
+                                        <td>
+                                        <c:out value="${doctor.email}"></c:out>
+                                        </td>
+                                        <td>
+                                        <c:out value="${doctor.specialization}"></c:out>
+                                        </td>
+                                    </tr>
+
+                            </c:forEach>
+                        </tbody>
+                    </table>
+                </c:if>
         </div>
-        <form action="AppointmentController" method="post">
-            Patient Detail form <br><br>
-            Patient Name <input type="text" name="patientname"/><br><br>
-            Appointment Date <input type="Date" name="date"/><br><br>
-            Appointment Time <input type="Time" name="time"/><br><br>
-            Mention Your Problem <input type="text" name="problem"/><br><br>
-            Doctor First Name <input type="text" name="doctorfirstname"/><br><br>
-            Doctor Last Name<input type="text" name="doctorlastname"/><br><br>
-            <input type="submit" value="Submit"/>
+        <form action="AppointmentController" method="post" class="form-horizontal" style="margin:0.5%">
+            <label>
+                Appointment Form 
+            </label><br><br>
+            <label>Patient Name </label>
+            <input type="text" name="patientname" class="form-control" style="width: 20%" placeholder="Patient Name"/><br><br>
+            <label>Appointment Date</label> <input type="Date" name="date" class="form-control" style="width: 20%" placeholder="Date"/><br><br>
+            <label>Appointment Time</label> <input type="Time" name="time" class="form-control" style="width:20%" placeholder="Time"/><br><br>
+            <label>Mention Your Problem</label> <input type="text" name="problem" class="form-control" style="width:20% " placeholder="Headache..."/><br><br>
+            <label>Doctor First Name</label> <input type="text" name="doctorfirstname" class="form-control" style="width:20%" placeholder="Doctor Firstname"/><br><br>
+            <label>Doctor Last Name</label><input type="text" name="doctorlastname" class="form-control" style="width:20%" placeholder="Doctor Lastname"/><br><br>
+            <label>Doctor Email</label><input type="text" name="email" class="form-control" style="width:20%" placeholder="Doctor Email"/><br><br>
+            <label>Patient Email</label><input type="text" name="patientEmail" placeholder="Patient Email"/><br><br>
+            <input type="submit" value="Submit" class="btn btn-primary"/>
         </form>
         <c:if test="${!empty message}">
             <c:out value="${message}"></c:out>

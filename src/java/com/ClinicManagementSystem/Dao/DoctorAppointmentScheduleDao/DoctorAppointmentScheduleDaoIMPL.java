@@ -40,25 +40,6 @@ public class DoctorAppointmentScheduleDaoIMPL implements DoctorAppointmentSchedu
         }
     }
 
-    @Override
-    public boolean checkAvailability(String starttime, String endtime, Date date, String doctorfirstname, String doctorlastname) {
-        try {
-            ps = DbUtil.getConnection().prepareStatement(QueryUtil.CHECK_APPOINTMENT_AVAILABILITY);
-            ps.setString(1, starttime);
-            ps.setString(2, endtime);
-            ps.setDate(3, new java.sql.Date(date.getDate()));
-            ps.setString(4, doctorfirstname);
-            ps.setString(5, doctorlastname);
-            ResultSet rs_Dco = ps.executeQuery();
-            if (rs_Dco.next()) {
-                return true;
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(DoctorAppointmentScheduleDaoIMPL.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(DoctorAppointmentScheduleDaoIMPL.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return false;
-    }
+
 
 }

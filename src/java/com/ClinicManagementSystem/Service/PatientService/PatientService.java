@@ -5,6 +5,7 @@
  */
 package com.ClinicManagementSystem.Service.PatientService;
 
+import com.ClinicManagementSystem.Model.AppointmentDto.AppointmentDto;
 import com.ClinicManagementSystem.Model.PatientDto.PatientDto;
 import com.ClinicManagementSystem.Model.ReportDto.ReportDto;
 import java.util.List;
@@ -21,9 +22,12 @@ public interface PatientService {
 
     public boolean loginPatient(String username, String password);
 
-    public List<ReportDto> getPatientReport(String patientFirstName, String patientLastName);
+    public List<ReportDto> getPatientReport(String email);
 
     public List<PatientDto> getPatientDetail(String email);
-    
+
+    public List<AppointmentDto> getAppointmentPatient(String email);
+
+    public void deleteAppointment(int id);
 
 }

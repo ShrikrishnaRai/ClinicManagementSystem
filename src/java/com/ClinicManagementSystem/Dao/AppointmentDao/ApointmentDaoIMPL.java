@@ -53,6 +53,8 @@ public class ApointmentDaoIMPL implements AppointmentDao {
             ps.setDate(4, new java.sql.Date(appointmentDto.getAppointmentDate().getTime()));
             ps.setString(5, appointmentDto.getAppointmentTime());
             ps.setString(6, appointmentDto.getPatientProblem());
+            ps.setString(7, appointmentDto.getEmail());
+            ps.setString(8, appointmentDto.getPatientEmail());
             ps.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(ApointmentDaoIMPL.class.getName()).log(Level.SEVERE, null, ex);
@@ -68,7 +70,7 @@ public class ApointmentDaoIMPL implements AppointmentDao {
             ps.setString(1, firstname);
             ps.setString(2, lastname);
             ResultSet rc_Dco = ps.executeQuery();
-            if(rc_Dco.next()){
+            if (rc_Dco.next()) {
                 return true;
             }
         } catch (SQLException ex) {

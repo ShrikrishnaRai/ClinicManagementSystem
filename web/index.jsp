@@ -1,6 +1,6 @@
 <%-- 
-    Document   : index
-    Created on : 23-Sep-2018, 22:11:36
+    Document   : indexx
+    Created on : 27-Oct-2018, 09:05:06
     Author     : cri_r
 --%>
 
@@ -11,68 +11,63 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="shortcut icon" type="image/x-icon" href="https://www.shareicon.net/download/2016/07/12/795016_medical_512x512.png" />
-
         <title>Clinic Management System</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </head>
     <body>
-        <div>
-            <form action="LoginController" method="post">
-                <div>
-                Email: <input type="text" class="form-control"  name="username" style="width:15%; margin-left:  0.5%"/>
-                </div>
-                Password:<input type="text" class="form-control" name="password"/>
-                <select name="role">
-                    <option value="Admin">Admin</option>
-                    <option value="Doctor">Doctor</option>
-                    <option value="Patient">Patient</option>
-                </select>
-                <br><br>
-                <input type="submit"  class="btn btn-primary" value="Login"/>
-            </form>
-        </div>
-        else
-        <br><br>
-        <a href="signup.jsp">SignUp Here</a>
-        <c:if test="${!empty message}">
-            <c:out value="${message}"></c:out>
-        </c:if>
-        <c:if test="${!empty value}">
-            <c:out value="${value}"></c:out>
-        </c:if>
-        <br><br>
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-right: 5%;margin-left: 5%;margin-top: 0.5%;">
+            <a class="navbar-brand" href="#"><label>Clinic Management</label></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-            <!-- Wrapper for slides -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="signup.jsp">Sign Up</a>
+                    </li>
+                </ul>
+
+       
+
+            </div>
+            <c:if test="${!empty message}">
+                <c:out value="${message}"></c:out>
+            </c:if>
+        </nav>
+        <form action="LoginController" method="post" style="margin-left: 5%;margin-right: 5%">
+            Email:<input type="text" name="username"/><br><br>
+            Password:<input type="password" name="password"/><br><br>
+            <select name="role">
+                <option value="Admin">Admin</option>
+                <option value="Doctor">Doctor</option>
+                <option value="Patient">Patient</option>
+            </select>
+            <br><br>
+            <input type="submit" value="login" />
+        </form>
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="margin-left: 5%;margin-right: 5%; height:500px">
             <div class="carousel-inner">
-                <div class="item active">
-                    <img src="http://urgentcare.ca/wp-content/uploads/2013/07/Untitled-1.png" alt="Los Angeles">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="https://www.olfati.com.br/wp-content/uploads/2016/10/clinicas-e-consultorios.jpg" alt="First slide" style="height: 500px">
                 </div>
-
-                <div class="item">
-                    <img src="http://vkool.com/wp-content/uploads/2015/04/how-to-cure-heart-disease-620x350.jpg" alt="Chicago">
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="http://www.dentalwise.co.uk/Images/Uploads/Budapest_1331592435_3.png" alt="Second slide" style="height: 500px">
                 </div>
-
-                <div class="item">
-                    <img src="https://neurocure.de/assets/images/3/Zelle_Fotolia-50da57d3.jpg" alt="New York">
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="http://clinic.digital-erp.co.id/files/3c014f7.jpg" alt="Third slide" style="height:500px">
                 </div>
             </div>
-
-            <!-- Left and right controls -->
-            <a class="left carousel-control" >
-                <span class="glyphicon glyphicon-chevron-left"></span>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
             </a>
-            <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
         </div>

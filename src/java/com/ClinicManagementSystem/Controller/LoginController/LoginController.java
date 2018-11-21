@@ -57,10 +57,13 @@ public class LoginController extends HttpServlet {
         if ("Doctor".equals(req.getParameter("role"))) {
             if (doctorService_Ic.loginDoctor(req.getParameter("username"), req.getParameter("password"))) {
                 RequestDispatcher rd = req.getRequestDispatcher(DOCTOR_PAGE);
-                req.setAttribute("appointment", doctorService_Ic.checkAppointment(req.getParameter("username")));
+                req.setAttribute("appointment", doctorService_Ic.checkAppointment(session.getAttribute("userName").toString()));
+                req.setAttribute("message", "Welcome " + session.getAttribute("userName") + "\t to \t" + "Clinic Management System");
                 rd.forward(req, resp);
             } else {
+                RequestDispatcher rd = req.getRequestDispatcher(INDEX_PAGE);
                 req.setAttribute("message", "Username of Password UnMatched");
+                rd.forward(req, resp);
             }
         }
         if ("Patient".equals(req.getParameter("role"))) {
@@ -69,7 +72,8 @@ public class LoginController extends HttpServlet {
             patientDto.setPassword(req.getParameter("password"));
             if (patientSerivce_Ic.loginPatient(patientDto.getUsername(), patientDto.getPassword())) {
                 RequestDispatcher rd = req.getRequestDispatcher(PATIENT_PAGE);
-                req.setAttribute("doctor", doctorService_Ic.getDoctorInfo());
+                req.setAttribute("patient", patientSerivce_Ic.getPatientReport(session.getAttribute("userName").toString()));
+                req.setAttribute("patient_a", patientSerivce_Ic.getAppointmentPatient(session.getAttribute("userName").toString()));
                 req.setAttribute("message", "Welcome " + session.getAttribute("userName") + "\t to \t" + "Clinic Management System");
                 rd.forward(req, resp);
             } else {

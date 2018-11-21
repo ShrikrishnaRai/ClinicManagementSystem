@@ -7,6 +7,7 @@ package com.ClinicManagementSystem.Service.AdminService;
 
 import com.ClinicManagementSystem.Dao.AdminDao.AdminDao;
 import com.ClinicManagementSystem.Dao.AdminDao.AdminDaoIMPL;
+import com.ClinicManagementSystem.Model.DoctorDto.DoctorDto;
 import com.ClinicManagementSystem.Model.ReportDto.ReportDto;
 
 /**
@@ -37,6 +38,11 @@ public class AdminServiceIMPL implements AdminService {
     @Override
     public void saveReport(ReportDto reportDto) {
         adminDao_Ic.saveReport(reportDto);
+    }
+
+    @Override
+    public void updateDoctor(DoctorDto doctorDto) {
+        adminDao_Ic.updateDoctorInfo(doctorDto);
     }
 
 }

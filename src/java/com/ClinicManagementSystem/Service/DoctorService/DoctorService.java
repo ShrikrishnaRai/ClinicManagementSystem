@@ -23,4 +23,8 @@ public interface DoctorService {
 
     public List<AppointmentDto> checkAppointment(String email);
 
+    public DoctorDto getDoctorInfo(int id);
+
+    public void deleteAppointment(int id);
+
 }

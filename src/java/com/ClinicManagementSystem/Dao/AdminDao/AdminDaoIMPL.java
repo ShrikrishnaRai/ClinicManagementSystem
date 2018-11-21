@@ -5,6 +5,7 @@
  */
 package com.ClinicManagementSystem.Dao.AdminDao;
 
+import com.ClinicManagementSystem.Model.DoctorDto.DoctorDto;
 import com.ClinicManagementSystem.Model.ReportDto.ReportDto;
 import com.ClinicManagementSystem.Util.DbUtil;
 import com.ClinicManagementSystem.Util.QueryUtil;
@@ -68,8 +69,27 @@ public class AdminDaoIMPL implements AdminDao {
             ps.setString(7, reportDto.getBloodPressure());
             ps.setString(8, reportDto.getSugarLevel());
             ps.setString(9, reportDto.getRemarks());
+            ps.setString(10, reportDto.getEmail());
             ps.executeUpdate();
 
+        } catch (SQLException ex) {
+            Logger.getLogger(AdminDaoIMPL.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(AdminDaoIMPL.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @Override
+    public void updateDoctorInfo(DoctorDto doctorDto) {
+        try {
+            ps = DbUtil.getConnection().prepareStatement(QueryUtil.UPDATE_DOCTOR);
+            ps.setString(1, doctorDto.getEmail());
+            ps.setString(2, doctorDto.getFirstName());
+            ps.setString(3, doctorDto.getLastName());
+            ps.setString(4, doctorDto.getSpecialization());
+            ps.setString(5, doctorDto.getPassword());
+            ps.setInt(6, doctorDto.getId());
+            ps.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(AdminDaoIMPL.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
